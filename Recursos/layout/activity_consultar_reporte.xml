@@ -1,0 +1,352 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="mx.pitalla.g6.MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:textColor="#1486A6"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Consulta el estatus y seguimiento de tu reporte"
+            android:id="@+id/tvReporteCiudadanoConsult"
+            android:textSize="25dp" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:padding="1dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <!--Folio Start-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/layout_round_bg"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="3dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:background="#fff"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone|number"
+                        android:ems="10"
+                        android:hint="Folio del reporte"
+                        android:id="@+id/etFolioReport" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- Folio End -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:paddingLeft="20dp"
+                    android:onClick="checkReport"
+                    android:paddingRight="20dp"
+                    android:background="@drawable/btn_morado"
+                    android:drawableLeft="@drawable/view_report"
+                    android:text="Consultar"
+                    android:id="@+id/btnCheckReport"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progress_consult"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:layout_margin="1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/no_result"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:padding="1dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:textColor="#cc0606"
+                android:layout_height="wrap_content"
+                android:text="El folio 2165454 no existe"
+                android:id="@+id/tvErrorNotFound"
+                android:textSize="20dp"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@drawable/layout_round_noborder1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Folio:"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView5"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="236"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:id="@+id/tvFolio"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/layout_round_noborder2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de alta:"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView7"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10/02/2015"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:id="@+id/tvFecha"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/layout_round_noborder2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Colonia:"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView9"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GUAYMAS NORTE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:id="@+id/tvColonia"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/layout_round_noborder2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo:"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView11"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BACHE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:id="@+id/tvTipo"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/layout_round_noborder2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estatus:"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView17"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pendiente"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:id="@+id/tvEstatus"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/layout_round_noborder2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Asunto:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView13"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textAlignment="textStart"
+                    android:layout_gravity="start"
+                    android:text="Texto"
+                    android:padding="5dp"
+                    android:id="@+id/tvAsunto"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/layout_round_noborder3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seguimiento:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:id="@+id/textView15"
+                    android:textColor="#264352"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textAlignment="textStart"
+                    android:layout_gravity="start"
+                    android:text="Texto"
+                    android:padding="5dp"
+                    android:id="@+id/tvSeguimiento"
+                    android:textColor="#39667C"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mx.pitalla.g6.MapsActivity">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/mapPrueba"
+        android:layout_alignParentTop="true"
+        tools:context="mx.pitalla.g6.MapsActivity"
+        android:layout_above="@+id/linearLayout4" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/btnIr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ir al Palacio"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.64" />
+
+        <Button
+            android:id="@+id/btnMiLocalizacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mi posición"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="0.35" />
+
+        <Button
+            android:id="@+id/btnMarcador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addMarker"
+            android:text="Poner marcador"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+    </LinearLayout>
+
+</RelativeLayout>

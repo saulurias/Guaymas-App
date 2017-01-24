@@ -16,6 +16,7 @@
 		B4022E181E2F0F40004AB826 /* Noticias.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E171E2F0F40004AB826 /* Noticias.swift */; };
 		B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */; };
 		B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */; };
+		B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B146871E35443C00B2537C /* RadioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B4022E171E2F0F40004AB826 /* Noticias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noticias.swift; sourceTree = "<group>"; };
 		B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasTableViewController.swift; sourceTree = "<group>"; };
 		B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasViewController.swift; sourceTree = "<group>"; };
+		B4B146871E35443C00B2537C /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				B4022E011E2F0EDD004AB826 /* ViewController.swift */,
 				B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */,
 				B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */,
+				B4B146871E35443C00B2537C /* RadioViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */,
+				B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */,
 				B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */,
 				B4022E021E2F0EDD004AB826 /* ViewController.swift in Sources */,
 				B4022E081E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld in Sources */,
@@ -342,6 +346,7 @@
 				B4022E131E2F0EDD004AB826 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

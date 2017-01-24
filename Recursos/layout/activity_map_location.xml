@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/layout_round_bg_gray"
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="3dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Para modificar la localización del reporte toque el mapa en la ubicación deseada para mover el indicador y posteriormente toque el botón 'Definir posición'."
+            android:id="@+id/textView3"
+            android:textColor="#264352"
+            android:textAlignment="center"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posición actual"
+                android:id="@+id/btnGeneralActual"
+                android:layout_weight="0.5"
+                android:background="@drawable/btn_morado"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="Definir posición"
+                android:id="@+id/btnGeneralAceptar"
+                android:layout_weight="0.5"
+                android:background="@drawable/btn_morado"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/mapGeneral"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/linearLayout5"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" /-->
+
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/mapGeneral"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/linearLayout5"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

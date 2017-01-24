@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="mx.pitalla.g6.ReporteenuActivity">
+
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/report_progress"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ScrollView
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollViewFormReport"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@drawable/btn_morado"
+                android:drawableLeft="@drawable/view_report"
+                android:text="Nuevo Reporte"
+                android:onClick="goToConsultReport"
+                android:id="@+id/btnCheckReport"
+                android:layout_marginBottom="10dp"
+                android:textSize="18dp" />
+
+            <!--Container form start-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:padding="1dp"
+                android:layout_height="wrap_content">
+
+                <!--Interested Start-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/layout_round_bg"
+                    android:paddingLeft="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:background="#fff"
+                        android:layout_height="wrap_content">
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:text="Mis Reportes"
+                    android:drawableLeft="@drawable/document_file_pixel"
+                    android:drawableRight="@drawable/document_file_pixel"
+                    android:id="@+id/textView2"
+                    android:textSize="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dp"
+                    android:textIsSelectable="false" />
+
+                <!-- Interested End -->
+
+                <!-- Address-->
+                <!--  Address -->
+
+                <!-- suburb-->
+
+                <!--  suburb -->
+
+                <!-- map-->
+
+                <!--  map -->
+
+                <!-- Cellphone-->
+
+                <!--  Cellphone -->
+
+                <!-- Email-->
+                <!--  Email -->
+
+                <!--Type Choosen Start-->
+
+                <!--Type Choosen End-->
+
+                <!-- Subject-->
+                <!-- Subject -->
+
+                <!-- photo-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+
+                </LinearLayout>
+                <!-- photo -->
+
+                <!--foto preview-->
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:padding="0dp"
+                        android:textColor="#fff"
+                        android:onClick="sendReportButton"
+                        android:background="@drawable/btn_morado"
+                        android:text="Enviar reporte"
+                        android:id="@+id/button"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+                <!--foto preview-->
+
+                <!-- Submit-->
+                <!--  Submit -->
+
+
+            </LinearLayout>
+            <!--Container form end-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+

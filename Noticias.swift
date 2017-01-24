@@ -9,5 +9,20 @@
 import Foundation
 
 class Noticias {
+    let title : String;
+    let date : String;
+    let content : String;
+    let url : String;
     
+    init (
+        title: String,
+        date: String,
+        content: String,
+        url: String
+        ){
+        self.title = title
+        self.date = date
+        self.content = content
+        self.url = url
+    }
 }

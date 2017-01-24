@@ -20,6 +20,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func btnPagina(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string:"http://www.guaymas.gob.mx") as! URL, options: [:], completionHandler: nil)
+    }
+    @IBAction func btnFacebook(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string:"https://www.facebook.com/AquiEsGuaymas/?pnref=story.unseen-section") as! URL, options: [:], completionHandler: nil)
+    }
+    @IBAction func btnTwitter(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string:"https://twitter.com/Guaymas_2017") as! URL, options: [:], completionHandler: nil)
+    }
+    @IBAction func btnYoutuber(_ sender: Any) {
+        UIApplication.shared.open(NSURL(string:"https://www.youtube.com/channel/UC6LQww1epc_VzH7RYMo8HzQ") as! URL, options: [:], completionHandler: nil)
+    }
 }
+    
+    
+
+
+
 
