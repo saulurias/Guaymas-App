@@ -17,16 +17,30 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     
     @IBOutlet weak var botonAnterior: UIButton!
     
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
     let noticiaManager = NoticiaManager();
     var pagina = 1;
     
     //MARK: - Noticia Manager Delegate
     func didLoadNoticias() {
-        tableView.reloadData()
+        activityIndicator.stopAnimating();
+        UIApplication.shared.endIgnoringInteractionEvents();
+        tableView.reloadData();
     }
     
+    func animacionCargando(){
+        activityIndicator.center = self.view.center;
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray;
+        view.addSubview(activityIndicator);
+    }
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        animacionCargando();
+        activityIndicator.startAnimating();
+        UIApplication.shared.beginIgnoringInteractionEvents();
         noticiaManager.delegate = self;
         noticiaManager.cargarNoticias(pagina: pagina);
         botonAnterior.isHidden = true;
@@ -42,7 +56,6 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return noticiaManager.noticias.count;
     }
 
@@ -85,17 +98,22 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         pagina+=1;
         noticiaManager.noticias.removeAll();
         noticiaManager.cargarNoticias(pagina: pagina);
+        activityIndicator.startAnimating();
+        UIApplication.shared.beginIgnoringInteractionEvents();
         botonAnterior.isHidden = false;
     }
     
     @IBAction func botonAnteriorPrecionado(_ sender: Any) {
         pagina-=1;
+        activityIndicator.startAnimating();
+        UIApplication.shared.beginIgnoringInteractionEvents();
         if pagina <= 1 {
             pagina = 1;
             botonAnterior.isHidden = true;
         }else{
             botonAnterior.isHidden = false;
         }
+        
         
         noticiaManager.noticias.removeAll();
         noticiaManager.cargarNoticias(pagina: pagina);

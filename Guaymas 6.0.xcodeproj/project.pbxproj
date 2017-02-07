@@ -44,6 +44,7 @@
 		B46A188D1E45651400E47B39 /* NoticiaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaManager.swift; sourceTree = "<group>"; };
 		B46A188F1E45687600E47B39 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		B46A18911E45984100E47B39 /* MultimediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimediaViewController.swift; sourceTree = "<group>"; };
+		B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldCondensed.ttf"; sourceTree = "<group>"; };
 		B4B146871E35443C00B2537C /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewController.swift; sourceTree = "<group>"; };
 		B4B2816B1E49936000005941 /* EventoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoViewController.swift; sourceTree = "<group>"; };
 		B4B2816D1E49938100005941 /* EventosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		B4022DFE1E2F0EDD004AB826 /* Guaymas 6.0 */ = {
 			isa = PBXGroup;
 			children = (
+				B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */,
 				B46A188F1E45687600E47B39 /* SwiftyJSON.swift */,
 				B4022DFF1E2F0EDD004AB826 /* AppDelegate.swift */,
 				B4022E031E2F0EDD004AB826 /* Main.storyboard */,
