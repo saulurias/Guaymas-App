@@ -19,7 +19,7 @@ class NoticiaManager{
     var delegate : NoticiaManagerDelegate? = nil
     
     func cargarNoticias(){
-        let noticias : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?noticias=true&pagina=1&cantidad=5";
+        let noticias : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?noticias_ios=true&pagina=1&cantidad=5";
         let url = URL(string: noticias)!;
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -30,14 +30,13 @@ class NoticiaManager{
             
             let json = JSON(data: data);
             
-            print("El número de json son: \(json.count)");
+            let noticiasJSON = json["posts"].array!
             
-            for index in 0...4 {
-
-                let titulo = json["posts"]["\(index)"]["titulo"].string;
-                let fecha = json["posts"]["\(index)"]["fecha"].string;
-                let contenido = json["posts"]["\(index)"]["contenido"].string;
-                let url = json["posts"]["\(index)"]["imagen"].string;
+            for noticia in noticiasJSON {
+                let titulo = noticia["titulo"].string;
+                let fecha = noticia["fecha"].string;
+                let contenido = noticia["contenido"].string;
+                let url = noticia["imagen"].string;
                 
                 let noticia = Noticia(titulo: titulo!,
                                       fecha: fecha!,

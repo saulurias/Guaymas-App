@@ -17,7 +17,7 @@ class EventoManager{
     var delegate : EventoManagerDelegate? = nil
     
     func cargarEventos(){
-        let eventos : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?noticias=true&pagina=1&cantidad=5";
+        let eventos : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?calendario=proximos";
         let url = URL(string: eventos)!;
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -28,16 +28,17 @@ class EventoManager{
             
             let json = JSON(data: data);
             
-            for index in 0...4 {
-                
-                let titulo = json["posts"]["\(index)"]["titulo"].string;
-                let descripcion = json["posts"]["\(index)"]["titulo"].string;
-                let organiza = json["posts"]["\(index)"]["categoria"].string;
-                let lugar = json["posts"]["\(index)"]["estado"].string;
-                let fecha = json["posts"]["\(index)"]["fecha"].string;
-                let hora = json["posts"]["\(index)"]["fecha"].string;
-                let contacto = json["posts"]["\(index)"]["categoria"].string;
-                let url = json["posts"]["\(index)"]["imagen"].string;
+            let eventosJSON = json.array!
+            print(eventosJSON.count)
+            for evento in eventosJSON {
+                let titulo = evento["nombre_evento"].string;
+                let descripcion = evento["desc"].string;
+                let organiza = evento["organiza"].string;
+                let lugar = evento["lugar"].string;
+                let fecha = evento["fecha"].string;
+                let hora = evento["hora"].string;
+                let contacto = evento["contacto"].string;
+                let url = evento["imagen"].string;
                 
                 let evento = Evento(titulo: titulo!, descripcion: descripcion!, organiza: organiza!, lugar: lugar!, fecha: fecha!, hora: hora!, contacto: contacto!, url: url!);
                 self.eventos.append(evento);

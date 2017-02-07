@@ -13,6 +13,9 @@ import UIKit
 
 class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate {
 
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var botonAnterior: UIButton!
     
     let noticiaManager = NoticiaManager();
         
@@ -26,6 +29,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         super.viewDidLoad()
         noticiaManager.delegate = self;
         noticiaManager.cargarNoticias();
+        botonAnterior.isHidden = true;
     }
 
     override func didReceiveMemoryWarning() {
