@@ -18,7 +18,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     @IBOutlet weak var botonAnterior: UIButton!
     
     let noticiaManager = NoticiaManager();
-        
+    var pagina = 1;
     
     //MARK: - Noticia Manager Delegate
     func didLoadNoticias() {
@@ -28,7 +28,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         noticiaManager.delegate = self;
-        noticiaManager.cargarNoticias();
+        noticiaManager.cargarNoticias(pagina: pagina);
         botonAnterior.isHidden = true;
     }
 
@@ -69,7 +69,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     }
     
     
-    // MARK: - Navigation
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detallesNoticia" {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -78,5 +78,29 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
             }
         }
     }
+    
+    //MARK: - Aciones Boton
+    
+    @IBAction func botonSiguientePrecionado(_ sender: Any) {
+        pagina+=1;
+        noticiaManager.noticias.removeAll();
+        noticiaManager.cargarNoticias(pagina: pagina);
+        botonAnterior.isHidden = false;
+    }
+    
+    @IBAction func botonAnteriorPrecionado(_ sender: Any) {
+        pagina-=1;
+        if pagina <= 1 {
+            pagina = 1;
+            botonAnterior.isHidden = true;
+        }else{
+            botonAnterior.isHidden = false;
+        }
+        
+        noticiaManager.noticias.removeAll();
+        noticiaManager.cargarNoticias(pagina: pagina);
+    }
+    
+    
 
 }

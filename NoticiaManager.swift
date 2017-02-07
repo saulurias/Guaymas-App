@@ -18,8 +18,8 @@ class NoticiaManager{
     var noticias = [Noticia]();
     var delegate : NoticiaManagerDelegate? = nil
     
-    func cargarNoticias(){
-        let noticias : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?noticias_ios=true&pagina=1&cantidad=5";
+    func cargarNoticias(pagina: Int){
+        let noticias : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?noticias_ios=true&pagina=\(pagina)&cantidad=5";
         let url = URL(string: noticias)!;
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
             

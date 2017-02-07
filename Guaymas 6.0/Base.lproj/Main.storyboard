@@ -271,7 +271,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97u-Jl-pN4" id="EpG-8K-DFM">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventosDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Vu9-3k-MRU">
@@ -558,6 +558,9 @@
                                     <state key="normal" title="Anterior">
                                         <color key="titleColor" red="0.92142886956135472" green="1" blue="0.89531451711774679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="botonAnteriorPrecionado:" destination="Seg-CJ-iSl" eventType="touchUpInside" id="oEU-RK-MEb"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-ad-nNS">
                                     <rect key="frame" x="160" y="0.0" width="160" height="44"/>
@@ -565,6 +568,9 @@
                                     <state key="normal" title="Siguiente">
                                         <color key="titleColor" red="0.97871559401883457" green="1" blue="0.95699233959939101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="botonSiguientePrecionado:" destination="Seg-CJ-iSl" eventType="touchUpInside" id="pZ3-cW-cg2"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -573,7 +579,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lcf-RK-UpE" id="zfY-jb-hbe">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noticiadefault" translatesAutoresizingMaskIntoConstraints="NO" id="iyD-GE-Z3u">
