@@ -9,8 +9,12 @@
 import UIKit
 
 class EventosTableViewController: UITableViewController, EventoManagerDelegate {
-
+    
     let eventoManager = EventoManager();
+    //MARK: - IBOutlets
+    @IBOutlet weak var botonEstado: UIButton!
+    
+    
     
     //MARK: - Evento Manager Delegate
     func didLoadEventos() {
@@ -20,41 +24,47 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         eventoManager.delegate = self;
-        eventoManager.cargarEventos();
+        eventoManager.cargarEventos(estado: "proximos");
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventoManager.eventos.count;
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaEvento") as! EventosTableViewCell
         
         let evento = eventoManager.eventos[indexPath.row];
+        
+        
         cell.tituloLabel.text = evento.titulo;
         cell.fechaLabel.text = evento.fecha;
         cell.lugarLabel.text = evento.lugar;
         
-         //Cargar imagen
-         let url = URL(string: evento.url)!
-         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
-         DispatchQueue.main.async {
-         let image = UIImage(data: data!);
-         cell.imagenEvento.image = image;
-         cell.setNeedsLayout();
-         }
-         
-         }//End session
-         session.resume()
- 
-
+        print(evento.url)
+       let url = URL(string: evento.url)
+        if url != nil{
+            //Cargar imagen
+            let session = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data!);
+                    cell.imagenEvento.image = image;
+                    cell.setNeedsLayout();
+                }
+                
+            }//End session
+            session.resume()
+        }
+       
+        
+        
         return cell
     }
     
@@ -67,6 +77,15 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
                 eventosViewController.evento = eventoManager.eventos[indexPath.row]
             }
         }
+    }
+    
+    //MARK: - Acciones
+    
+    @IBAction func botonEstadoPrecionado(_ sender: Any) {
+            eventoManager.eventos.removeAll();
+            eventoManager.cargarEventos(estado: "anteriores");
+            botonEstado.isHidden = true;
+        
     }
     
 }

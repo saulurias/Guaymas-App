@@ -28,8 +28,9 @@ class EventoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let evento = evento {
-            /*
+           
             //Cargar Labels
+            /*
             tituloLabel.numberOfLines = 0;
             tituloLabel.lineBreakMode = .byWordWrapping;
             descripcionLabel.numberOfLines = 0;
@@ -56,18 +57,19 @@ class EventoViewController: UIViewController {
             contactoLabel.text = evento.contacto;
             
             //Cargar imagen
-            let url = URL(string: evento.url)!
-            let session = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                //Si no es nil
-                if let data = data {
-                    let image = UIImage(data: data)
-                    //mostrar imagen
-                    self.imagenEvento.image = image
-                }
-            })//End session
-            session.resume()
-        }else{
-            print("Que pedo D:")
+            let url = URL(string: evento.url)
+            if url != nil{
+                let session = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                    //Si no es nil
+                    if let data = data {
+                        let image = UIImage(data: data)
+                        //mostrar imagen
+                        self.imagenEvento.image = image
+                    }
+                })//End session
+                session.resume()
+            }
+            
         }
     }
     

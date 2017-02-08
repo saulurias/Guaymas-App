@@ -16,8 +16,8 @@ class EventoManager{
     var eventos = [Evento]();
     var delegate : EventoManagerDelegate? = nil
     
-    func cargarEventos(){
-        let eventos : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?calendario=proximos";
+    func cargarEventos(estado : String){
+        let eventos : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?calendario=\(estado)";
         let url = URL(string: eventos)!;
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -28,8 +28,8 @@ class EventoManager{
             
             let json = JSON(data: data);
             
-            let eventosJSON = json.array!
-            print(eventosJSON.count)
+            let eventosJSON = json[].array!
+            
             for evento in eventosJSON {
                 let titulo = evento["nombre_evento"].string;
                 let descripcion = evento["desc"].string;
@@ -38,9 +38,13 @@ class EventoManager{
                 let fecha = evento["fecha"].string;
                 let hora = evento["hora"].string;
                 let contacto = evento["contacto"].string;
-                let url = evento["imagen"].string;
                 
-                let evento = Evento(titulo: titulo!, descripcion: descripcion!, organiza: organiza!, lugar: lugar!, fecha: fecha!, hora: hora!, contacto: contacto!, url: url!);
+                
+                let imagen = evento["imagen"].string;
+               
+                let url = "http://eventos.guaymas.gob.mx/images/eventos/\(imagen!)";
+                
+                let evento = Evento(titulo: titulo!, descripcion: descripcion!, organiza: organiza!, lugar: lugar!, fecha: fecha!, hora: hora!, contacto: contacto!, url: url);
                 self.eventos.append(evento);
             } //End for
             
@@ -50,7 +54,7 @@ class EventoManager{
                 }
             }
             
-            print(self.eventos.count)
+            
             
         }
         session.resume()
