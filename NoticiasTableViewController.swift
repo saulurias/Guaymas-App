@@ -16,6 +16,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     //MARK: - IBOutlets
     
     @IBOutlet weak var botonAnterior: UIButton!
+    @IBOutlet weak var botonSiguiente: UIButton!
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
     let noticiaManager = NoticiaManager();
@@ -24,8 +25,10 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     //MARK: - Noticia Manager Delegate
     func didLoadNoticias() {
         activityIndicator.stopAnimating();
-        UIApplication.shared.endIgnoringInteractionEvents();
+        botonSiguiente.isHidden = false;
+        tableView.refreshControl?.endRefreshing()
         tableView.reloadData();
+        
     }
     
     func animacionCargando(){
@@ -40,10 +43,11 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         super.viewDidLoad();
         animacionCargando();
         activityIndicator.startAnimating();
-        UIApplication.shared.beginIgnoringInteractionEvents();
         noticiaManager.delegate = self;
         noticiaManager.cargarNoticias(pagina: pagina);
         botonAnterior.isHidden = true;
+        botonSiguiente.isHidden = true;
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,20 +97,20 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     }
     
     //MARK: - Aciones Boton
+
     
-    @IBAction func botonSiguientePrecionado(_ sender: Any) {
+    @IBAction func botonSiguientePresionado(_ sender: Any) {
         pagina+=1;
         noticiaManager.noticias.removeAll();
+        tableView.refreshControl?.beginRefreshing()
         noticiaManager.cargarNoticias(pagina: pagina);
         activityIndicator.startAnimating();
-        UIApplication.shared.beginIgnoringInteractionEvents();
         botonAnterior.isHidden = false;
     }
     
-    @IBAction func botonAnteriorPrecionado(_ sender: Any) {
+    @IBAction func botonAnteriorPresionado(_ sender: Any) {
         pagina-=1;
         activityIndicator.startAnimating();
-        UIApplication.shared.beginIgnoringInteractionEvents();
         if pagina <= 1 {
             pagina = 1;
             botonAnterior.isHidden = true;
@@ -114,10 +118,13 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
             botonAnterior.isHidden = false;
         }
         
-        
+        tableView.refreshControl?.beginRefreshing()
         noticiaManager.noticias.removeAll();
         noticiaManager.cargarNoticias(pagina: pagina);
     }
+    
+
+    
     
     
 

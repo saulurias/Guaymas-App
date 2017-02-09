@@ -20,6 +20,11 @@
 		B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188D1E45651400E47B39 /* NoticiaManager.swift */; };
 		B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188F1E45687600E47B39 /* SwiftyJSON.swift */; };
 		B46A18921E45984100E47B39 /* MultimediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A18911E45984100E47B39 /* MultimediaViewController.swift */; };
+		B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */; };
+		B48491921E4BFC51004EB809 /* DirectorioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */; };
+		B48491941E4BFC7B004EB809 /* Dependencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491931E4BFC7B004EB809 /* Dependencia.swift */; };
+		B48491961E4BFC86004EB809 /* DependenciaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491951E4BFC86004EB809 /* DependenciaManager.swift */; };
+		B48491981E4C0552004EB809 /* DirectorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491971E4C0552004EB809 /* DirectorioViewController.swift */; };
 		B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B146871E35443C00B2537C /* RadioViewController.swift */; };
 		B4B2816C1E49936000005941 /* EventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2816B1E49936000005941 /* EventoViewController.swift */; };
 		B4B2816E1E49938100005941 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2816D1E49938100005941 /* EventosTableViewController.swift */; };
@@ -45,6 +50,11 @@
 		B46A188F1E45687600E47B39 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		B46A18911E45984100E47B39 /* MultimediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimediaViewController.swift; sourceTree = "<group>"; };
 		B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldCondensed.ttf"; sourceTree = "<group>"; };
+		B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioTableViewController.swift; sourceTree = "<group>"; };
+		B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioTableViewCell.swift; sourceTree = "<group>"; };
+		B48491931E4BFC7B004EB809 /* Dependencia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencia.swift; sourceTree = "<group>"; };
+		B48491951E4BFC86004EB809 /* DependenciaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciaManager.swift; sourceTree = "<group>"; };
+		B48491971E4C0552004EB809 /* DirectorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioViewController.swift; sourceTree = "<group>"; };
 		B4B146871E35443C00B2537C /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewController.swift; sourceTree = "<group>"; };
 		B4B2816B1E49936000005941 /* EventoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoViewController.swift; sourceTree = "<group>"; };
 		B4B2816D1E49938100005941 /* EventosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +115,8 @@
 				B4022E171E2F0F40004AB826 /* Noticia.swift */,
 				B4B281751E49996D00005941 /* Evento.swift */,
 				B4B281771E49997700005941 /* EventoManager.swift */,
+				B48491931E4BFC7B004EB809 /* Dependencia.swift */,
+				B48491951E4BFC86004EB809 /* DependenciaManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -112,6 +124,7 @@
 		B4022E151E2F0EFC004AB826 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */,
 				B4B2816F1E4993B000005941 /* EventosTableViewCell.swift */,
 				B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */,
 			);
@@ -123,11 +136,21 @@
 			children = (
 				B4B281741E4993E800005941 /* Multimedia */,
 				B4B281731E4993E200005941 /* Radio */,
+				B484918E1E4BFC27004EB809 /* Directorio */,
 				B4B281721E4993C300005941 /* Evento */,
 				B4B281711E4993B300005941 /* Noticia */,
 				B4022E011E2F0EDD004AB826 /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		B484918E1E4BFC27004EB809 /* Directorio */ = {
+			isa = PBXGroup;
+			children = (
+				B48491971E4C0552004EB809 /* DirectorioViewController.swift */,
+				B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */,
+			);
+			name = Directorio;
 			sourceTree = "<group>";
 		};
 		B4B281711E4993B300005941 /* Noticia */ = {
@@ -142,8 +165,8 @@
 		B4B281721E4993C300005941 /* Evento */ = {
 			isa = PBXGroup;
 			children = (
-				B4B2816B1E49936000005941 /* EventoViewController.swift */,
 				B4B2816D1E49938100005941 /* EventosTableViewController.swift */,
+				B4B2816B1E49936000005941 /* EventoViewController.swift */,
 			);
 			name = Evento;
 			sourceTree = "<group>";
@@ -238,16 +261,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */,
+				B48491961E4BFC86004EB809 /* DependenciaManager.swift in Sources */,
 				B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */,
 				B46A18921E45984100E47B39 /* MultimediaViewController.swift in Sources */,
 				B4B2816E1E49938100005941 /* EventosTableViewController.swift in Sources */,
 				B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */,
+				B48491921E4BFC51004EB809 /* DirectorioTableViewCell.swift in Sources */,
+				B48491941E4BFC7B004EB809 /* Dependencia.swift in Sources */,
 				B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */,
 				B4B2816C1E49936000005941 /* EventoViewController.swift in Sources */,
 				B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */,
 				B4022E021E2F0EDD004AB826 /* ViewController.swift in Sources */,
 				B4B281761E49996D00005941 /* Evento.swift in Sources */,
 				B4B281781E49997700005941 /* EventoManager.swift in Sources */,
+				B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */,
+				B48491981E4C0552004EB809 /* DirectorioViewController.swift in Sources */,
 				B4022E081E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld in Sources */,
 				B4B281701E4993B000005941 /* EventosTableViewCell.swift in Sources */,
 				B4022E001E2F0EDD004AB826 /* AppDelegate.swift in Sources */,

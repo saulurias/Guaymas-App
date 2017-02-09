@@ -18,13 +18,16 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     
     //MARK: - Evento Manager Delegate
     func didLoadEventos() {
+        tableView.refreshControl?.endRefreshing();
         tableView.reloadData();
+        botonEstado.isHidden = false;
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         eventoManager.delegate = self;
         eventoManager.cargarEventos(estado: "proximos");
+        botonEstado.isHidden = true;
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,9 +86,9 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     
     @IBAction func botonEstadoPrecionado(_ sender: Any) {
             eventoManager.eventos.removeAll();
+            tableView.refreshControl?.beginRefreshing();
             eventoManager.cargarEventos(estado: "anteriores");
             botonEstado.isHidden = true;
-        
     }
     
 }
