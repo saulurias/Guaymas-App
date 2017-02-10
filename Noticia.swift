@@ -13,5 +13,4 @@ struct Noticia {
     let fecha : String;
     let contenido : String;
     let url : String;
-    
 }

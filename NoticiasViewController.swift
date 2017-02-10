@@ -10,6 +10,7 @@ import UIKit
 
 class NoticiasViewController: UIViewController {
 
+    //Variables
     var noticia: Noticia?
     
     //MARK: - IBOutlets
@@ -20,7 +21,7 @@ class NoticiasViewController: UIViewController {
     @IBOutlet weak var contenidoLabel: UILabel!
     
     
-    //MARK: - View Lifecycle
+    //MARK: - Ciclo de vida de la Vista
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,7 +45,6 @@ class NoticiasViewController: UIViewController {
             })//End session
             session.resume()
         }
-        
     }
     
     override func viewDidLoad() {
@@ -54,6 +54,5 @@ class NoticiasViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
 }

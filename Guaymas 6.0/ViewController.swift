@@ -10,17 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    //MARK: - Ciclo de vida de la Vista
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = "Guaymas 2015 - 2018";
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    //MARK: - Acciones
     @IBAction func btnPagina(_ sender: Any) {
         UIApplication.shared.open(NSURL(string:"http://www.guaymas.gob.mx") as! URL, options: [:], completionHandler: nil)
     }

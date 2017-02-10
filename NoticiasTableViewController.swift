@@ -14,21 +14,22 @@ import UIKit
 class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate {
 
     //MARK: - IBOutlets
-    
     @IBOutlet weak var botonAnterior: UIButton!
     @IBOutlet weak var botonSiguiente: UIButton!
     
+    //Variables
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
-    let noticiaManager = NoticiaManager();
     var pagina = 1;
     
+    //Constantes
+    let noticiaManager = NoticiaManager();
+    
     //MARK: - Noticia Manager Delegate
-    func didLoadNoticias() {
+    func noticiasCargadas() {
         activityIndicator.stopAnimating();
         botonSiguiente.isHidden = false;
         tableView.refreshControl?.endRefreshing()
         tableView.reloadData();
-        
     }
     
     func animacionCargando(){
@@ -38,6 +39,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         view.addSubview(activityIndicator);
     }
     
+    //MARK: - Ciclo de vida de la Vista
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -47,7 +49,6 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         noticiaManager.cargarNoticias(pagina: pagina);
         botonAnterior.isHidden = true;
         botonSiguiente.isHidden = true;
-      
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +59,6 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     
     // MARK: - Table view data source
 
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return noticiaManager.noticias.count;
     }
@@ -96,8 +96,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         }
     }
     
-    //MARK: - Aciones Boton
-
+    //MARK: - Aciones
     
     @IBAction func botonSiguientePresionado(_ sender: Any) {
         pagina+=1;
@@ -117,15 +116,9 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         }else{
             botonAnterior.isHidden = false;
         }
-        
         tableView.refreshControl?.beginRefreshing()
         noticiaManager.noticias.removeAll();
         noticiaManager.cargarNoticias(pagina: pagina);
     }
     
-
-    
-    
-    
-
 }

@@ -11,7 +11,6 @@ import UIKit
 class EventosTableViewCell: UITableViewCell {
 
     //MARK: - IBOutlets
-    
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var fechaLabel: UILabel!
     @IBOutlet weak var lugarLabel: UILabel!

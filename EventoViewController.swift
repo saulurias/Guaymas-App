@@ -10,10 +10,10 @@ import UIKit
 
 class EventoViewController: UIViewController {
 
+    //Variables
     var evento : Evento?
     
     //MARK: - IBOutlets
-    
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var descripcionLabel: UILabel!
     @IBOutlet weak var organizaLabel: UILabel!
@@ -24,11 +24,10 @@ class EventoViewController: UIViewController {
     @IBOutlet weak var imagenEvento: UIImageView!
     
     
-    //MARK: - View Lifecycle
+    //MARK: - Ciclo de vida de la Vista
     
     override func viewWillAppear(_ animated: Bool) {
         if let evento = evento {
-            
             //Mostrar texto labels
             tituloLabel.text = evento.titulo;
             descripcionLabel.text = evento.descripcion;
@@ -51,7 +50,6 @@ class EventoViewController: UIViewController {
                 })//End session
                 session.resume()
             }
-            
         }
     }
     

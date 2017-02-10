@@ -15,30 +15,22 @@ class DirectorioTableViewCell: UITableViewCell {
     @IBOutlet weak var telefonoLabel: UILabel!
     @IBOutlet weak var direccionLabel: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
-    
-    @IBOutlet weak var botonTelefono: UIButton!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
-   
+    //MARK: - Acciones
     @IBAction func botonLlamarPresionado(_ sender: Any) {
-        
         let numeroLabel = telefonoLabel.text!
-        
         let numero = numeroLabel.replacingOccurrences(of: " ", with: "")
-        print(numero)
+        
         guard let number = URL(string: "telprompt://622" + numero) else { return }
         UIApplication.shared.open(number, options: [:], completionHandler: nil)
-        
     }
-    
 }

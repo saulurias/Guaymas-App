@@ -11,7 +11,7 @@ import MapKit
 
 class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
 
-    
+    //Variables
     var dependencia: Dependencia?;
     
     //MARK: - IBOutlets
@@ -19,12 +19,11 @@ class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var numeroLabel: UILabel!
     @IBOutlet weak var direccionLabel: UILabel!
     @IBOutlet weak var paginaLabel: UILabel!
-    
     @IBOutlet weak var mapView: MKMapView!
     
     
     
-    //MARK: - View Lifecycle
+    //MARK: - Ciclo de vida de la Vista
     override func viewWillAppear(_ animated: Bool) {
         if let dependencia = dependencia {
             nombreLabel.text = dependencia.nombre;
@@ -42,9 +41,7 @@ class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
             
             self.mapView.setRegion(region, animated: true)
             
-            
             ubicacionDependencia = CLLocationCoordinate2D(latitude: pLat, longitude: pLong);
-
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = ubicacionDependencia!
@@ -66,27 +63,20 @@ class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
         let tapPagina: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPaginaLabel))
         paginaLabel.addGestureRecognizer(tapPagina)
         tapPagina.delegate = self
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
     }
     
+    //MARK: - Acciones
+    
     func didTapNumeroLabel(sender: UITapGestureRecognizer) {
-        
         let numeroLabel = self.numeroLabel.text!
-        
-        print("you tapped label \(numeroLabel)")
-        
         let numero = numeroLabel.replacingOccurrences(of: " ", with: "")
-       
         guard let number = URL(string: "telprompt://622" + numero) else { return }
         UIApplication.shared.open(number, options: [:], completionHandler: nil)
     }
-    
-    
-    //MARK: - Acciones
     
     func didTapPaginaLabel(sender: UITapGestureRecognizer){
         let url = paginaLabel.text!;

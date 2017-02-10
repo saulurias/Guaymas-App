@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol NoticiaManagerDelegate {
-    func didLoadNoticias();
+    func noticiasCargadas();
 }
 
 class NoticiaManager{
@@ -42,18 +42,20 @@ class NoticiaManager{
                                       fecha: fecha!,
                                       contenido: contenido!,
                                       url: url!);
+                
                 self.noticias.append(noticia);
+                
             } //End for
             
             if let delegate = self.delegate {
                 DispatchQueue.main.async {
-                    delegate.didLoadNoticias()
+                    delegate.noticiasCargadas();
                 }
             }
             
             print(self.noticias.count)
             
-        }
+        }//End Session
         session.resume()
-    }
+    }//End cargarNoticias()
 }

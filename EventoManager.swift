@@ -8,7 +8,7 @@
 
 import Foundation
 protocol EventoManagerDelegate {
-    func didLoadEventos();
+    func eventosCargados();
 }
 
 class EventoManager{
@@ -44,19 +44,25 @@ class EventoManager{
                
                 let url = "http://eventos.guaymas.gob.mx/images/eventos/\(imagen!)";
                 
-                let evento = Evento(titulo: titulo!, descripcion: descripcion!, organiza: organiza!, lugar: lugar!, fecha: fecha!, hora: hora!, contacto: contacto!, url: url);
+                let evento = Evento(titulo: titulo!,
+                                    descripcion: descripcion!,
+                                    organiza: organiza!,
+                                    lugar: lugar!,
+                                    fecha: fecha!,
+                                    hora: hora!,
+                                    contacto: contacto!,
+                                    url: url);
+                
                 self.eventos.append(evento);
-            } //End for
+                
+            }//End for
             
             if let delegate = self.delegate {
                 DispatchQueue.main.async {
-                    delegate.didLoadEventos()
+                    delegate.eventosCargados();
                 }
             }
-            
-            
-            
-        }
+        }//End Session
         session.resume()
-    }
+    }//End cargarEventos()
 }

@@ -80,9 +80,9 @@
 		B4022DF31E2F0EDD004AB826 = {
 			isa = PBXGroup;
 			children = (
-				B4022E161E2F0F01004AB826 /* Controller */,
-				B4022E151E2F0EFC004AB826 /* View */,
 				B4022E141E2F0EF3004AB826 /* Model */,
+				B4022E151E2F0EFC004AB826 /* View */,
+				B4022E161E2F0F01004AB826 /* Controller */,
 				B4022DFE1E2F0EDD004AB826 /* Guaymas 6.0 */,
 				B4022DFD1E2F0EDD004AB826 /* Products */,
 				B41194D21E4D3CAC0098E7C4 /* Frameworks */,
@@ -100,8 +100,7 @@
 		B4022DFE1E2F0EDD004AB826 /* Guaymas 6.0 */ = {
 			isa = PBXGroup;
 			children = (
-				B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */,
-				B46A188F1E45687600E47B39 /* SwiftyJSON.swift */,
+				B4580E971E4E4605008687D9 /* Plugings */,
 				B4022DFF1E2F0EDD004AB826 /* AppDelegate.swift */,
 				B4022E031E2F0EDD004AB826 /* Main.storyboard */,
 				B4022E091E2F0EDD004AB826 /* Assets.xcassets */,
@@ -115,8 +114,8 @@
 		B4022E141E2F0EF3004AB826 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B46A188D1E45651400E47B39 /* NoticiaManager.swift */,
 				B4022E171E2F0F40004AB826 /* Noticia.swift */,
+				B46A188D1E45651400E47B39 /* NoticiaManager.swift */,
 				B4B281751E49996D00005941 /* Evento.swift */,
 				B4B281771E49997700005941 /* EventoManager.swift */,
 				B48491931E4BFC7B004EB809 /* Dependencia.swift */,
@@ -138,11 +137,11 @@
 		B4022E161E2F0F01004AB826 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B4B281741E4993E800005941 /* Multimedia */,
-				B4B281731E4993E200005941 /* Radio */,
-				B484918E1E4BFC27004EB809 /* Directorio */,
-				B4B281721E4993C300005941 /* Evento */,
-				B4B281711E4993B300005941 /* Noticia */,
+				B4B281711E4993B300005941 /* Controlador Noticia */,
+				B4B281721E4993C300005941 /* Controlador Evento */,
+				B4B281731E4993E200005941 /* Controlador Radio */,
+				B4B281741E4993E800005941 /* Controlador Multimedia */,
+				B484918E1E4BFC27004EB809 /* Controlador Directorio */,
 				B4022E011E2F0EDD004AB826 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -156,47 +155,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B484918E1E4BFC27004EB809 /* Directorio */ = {
+		B4580E971E4E4605008687D9 /* Plugings */ = {
+			isa = PBXGroup;
+			children = (
+				B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */,
+				B46A188F1E45687600E47B39 /* SwiftyJSON.swift */,
+			);
+			name = Plugings;
+			sourceTree = "<group>";
+		};
+		B484918E1E4BFC27004EB809 /* Controlador Directorio */ = {
 			isa = PBXGroup;
 			children = (
 				B48491971E4C0552004EB809 /* DirectorioViewController.swift */,
 				B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */,
 			);
-			name = Directorio;
+			name = "Controlador Directorio";
 			sourceTree = "<group>";
 		};
-		B4B281711E4993B300005941 /* Noticia */ = {
+		B4B281711E4993B300005941 /* Controlador Noticia */ = {
 			isa = PBXGroup;
 			children = (
 				B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */,
 				B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */,
 			);
-			name = Noticia;
+			name = "Controlador Noticia";
 			sourceTree = "<group>";
 		};
-		B4B281721E4993C300005941 /* Evento */ = {
+		B4B281721E4993C300005941 /* Controlador Evento */ = {
 			isa = PBXGroup;
 			children = (
 				B4B2816B1E49936000005941 /* EventoViewController.swift */,
 				B4B2816D1E49938100005941 /* EventosTableViewController.swift */,
 			);
-			name = Evento;
+			name = "Controlador Evento";
 			sourceTree = "<group>";
 		};
-		B4B281731E4993E200005941 /* Radio */ = {
+		B4B281731E4993E200005941 /* Controlador Radio */ = {
 			isa = PBXGroup;
 			children = (
 				B4B146871E35443C00B2537C /* RadioViewController.swift */,
 			);
-			name = Radio;
+			name = "Controlador Radio";
 			sourceTree = "<group>";
 		};
-		B4B281741E4993E800005941 /* Multimedia */ = {
+		B4B281741E4993E800005941 /* Controlador Multimedia */ = {
 			isa = PBXGroup;
 			children = (
 				B46A18911E45984100E47B39 /* MultimediaViewController.swift */,
 			);
-			name = Multimedia;
+			name = "Controlador Multimedia";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,10 +425,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WV9YBKM4R8;
 				INFOPLIST_FILE = "Guaymas 6.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saulurias.Guaymas-6-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -430,10 +440,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WV9YBKM4R8;
 				INFOPLIST_FILE = "Guaymas 6.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saulurias.Guaymas-6-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

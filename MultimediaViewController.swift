@@ -13,12 +13,12 @@ class MultimediaViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var webView: UIWebView!
     
-    //Variables
+    //Constantes
     let urlValue = "http://g6.guaymas.gob.mx/reporteciudadano/media.php?pagina=1&videosxPagina=4";
     
+    //MARK: - Ciclo de vida de la Vista
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if let url = URL (string: urlValue){
             let requestObj = URLRequest(url: url)
             _ = webView.loadRequest(requestObj)
@@ -27,7 +27,6 @@ class MultimediaViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DependenciaManagerDelegate {
-    func didLoadDirectorio();
+    func directorioCargado();
 }
 
 class DependenciaManager {
@@ -54,17 +54,24 @@ class DependenciaManager {
                     longitud = -110.889612;
                 }
                 
-                let dependencia = Dependencia(nombre: nombre!, telefono: telefono!, direccion: direccion!, pagina: pagina!, latitud: latitud!, longitud: longitud!)
+                let dependencia = Dependencia(nombre: nombre!,
+                                              telefono: telefono!,
+                                              direccion: direccion!,
+                                              pagina: pagina!,
+                                              latitud: latitud!,
+                                              longitud: longitud!)
+                
                 self.directorio.append(dependencia);
-            } //End for
+                
+            }//End for
             
             if let delegate = self.delegate {
                 DispatchQueue.main.async {
-                    delegate.didLoadDirectorio();
+                    delegate.directorioCargado();
                 }
             }
-        }
+        }//End Session
         session.resume()
-    }
+    }//End cargarDependencias()
     
 }

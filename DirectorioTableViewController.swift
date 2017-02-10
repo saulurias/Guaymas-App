@@ -15,10 +15,12 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
   
     
     //MARK: - Dependencia Manager Delegate
-    func didLoadDirectorio() {
+    func directorioCargado() {
         tableView.reloadData();
         activityIndicator.stopAnimating();
     }
+    
+    //MARK: - Ciclo de vida de la Vista
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -39,9 +41,6 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
         return directorioManager.directorio.count;
     }
 
-    
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaDirectorio") as! DirectorioTableViewCell
 
@@ -69,6 +68,8 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
                 }
             }
     }
+    
+    //MARK: - Funciones Vista
     
     func animacionCargando(){
         activityIndicator.center = self.view.center;
