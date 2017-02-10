@@ -9,19 +9,21 @@
 import UIKit
 
 class DirectorioTableViewController: UITableViewController, DependenciaManagerDelegate {
-
     
     let directorioManager = DependenciaManager();
-    
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
   
     
     //MARK: - Dependencia Manager Delegate
     func didLoadDirectorio() {
         tableView.reloadData();
+        activityIndicator.stopAnimating();
     }
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        animacionCargando();
+        activityIndicator.startAnimating();
         directorioManager.delegate = self;
         directorioManager.cargarDependencias();
     }
@@ -37,6 +39,8 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
         return directorioManager.directorio.count;
     }
 
+    
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaDirectorio") as! DirectorioTableViewCell
@@ -58,9 +62,19 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            if segue.identifier == "detallesDependencia" {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let directorioViewController = segue.destination as! DirectorioViewController
+                    directorioViewController.dependencia = directorioManager.directorio[indexPath.row];
+                }
+            }
     }
     
+    func animacionCargando(){
+        activityIndicator.center = self.view.center;
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray;
+        view.addSubview(activityIndicator);
+    }
 
 }

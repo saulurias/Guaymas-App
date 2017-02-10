@@ -27,15 +27,6 @@ class NoticiasViewController: UIViewController {
         
         if let noticia = noticia {
             
-            //Cargar labels
-            tituloLabel.numberOfLines = 0;
-            tituloLabel.lineBreakMode = .byWordWrapping;
-            fechaLabel.numberOfLines = 0;
-            fechaLabel.lineBreakMode = .byWordWrapping;
-            contenidoLabel.numberOfLines = 0;
-            contenidoLabel.lineBreakMode = .byWordWrapping;
- 
-            
             //mostrar texto labels
             tituloLabel.text = noticia.titulo
             fechaLabel.text = noticia.fecha

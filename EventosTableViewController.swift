@@ -24,7 +24,7 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
         eventoManager.delegate = self;
         eventoManager.cargarEventos(estado: "proximos");
         botonEstado.isHidden = true;

@@ -186,7 +186,7 @@
                                     <outlet property="linkLabel" destination="EEG-sQ-v8w" id="AO0-oq-4cc"/>
                                     <outlet property="nombreLabel" destination="nDk-MD-1vX" id="Cto-sI-41w"/>
                                     <outlet property="telefonoLabel" destination="JhH-dE-zM0" id="uSI-WM-N3H"/>
-                                    <segue destination="SXy-Ek-EUk" kind="show" id="CWA-yV-j4j"/>
+                                    <segue destination="SXy-Ek-EUk" kind="show" identifier="detallesDependencia" id="CWA-yV-j4j"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -218,7 +218,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Dependencia" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T0O-Z2-jWc">
                                         <rect key="frame" x="0.0" y="-62" width="320" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.082352941176470587" green="0.23529411764705882" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefono:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-3Y-6TX">
@@ -227,7 +227,7 @@
                                         <color key="textColor" red="0.8901960784313725" green="0.78823529411764703" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgx-6j-C6a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sgx-6j-C6a">
                                         <rect key="frame" x="90.5" y="-9" width="213" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="213" id="YTQ-Fm-gPk"/>
@@ -242,7 +242,7 @@
                                         <color key="textColor" red="0.8901960784313725" green="0.78823529411764703" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL Página" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqD-hN-DiX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL Página" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QqD-hN-DiX">
                                         <rect key="frame" x="99.5" y="81" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="err-8q-9G8"/>
@@ -272,7 +272,7 @@
                                         <color key="textColor" red="0.8901960784313725" green="0.78823529411764703" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección dependencia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-qM-whx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección dependencia" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-qM-whx">
                                         <rect key="frame" x="89.5" y="35" width="213" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="213" id="3bn-ai-6i5"/>
@@ -316,6 +316,13 @@
                             <constraint firstItem="AaR-bG-dXC" firstAttribute="leading" secondItem="IyM-gX-ffz" secondAttribute="leading" id="sqR-U3-aRN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="direccionLabel" destination="n3Y-qM-whx" id="B8j-tI-Ftd"/>
+                        <outlet property="mapView" destination="WPm-rN-uDH" id="8uo-ax-Tyz"/>
+                        <outlet property="nombreLabel" destination="T0O-Z2-jWc" id="BdA-gn-PV0"/>
+                        <outlet property="numeroLabel" destination="Sgx-6j-C6a" id="wZ7-FE-T54"/>
+                        <outlet property="paginaLabel" destination="QqD-hN-DiX" id="tQ6-Df-LLA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4R-Tt-cc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -28,24 +28,6 @@ class EventoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let evento = evento {
-           
-            //Cargar Labels
-            /*
-            tituloLabel.numberOfLines = 0;
-            tituloLabel.lineBreakMode = .byWordWrapping;
-            descripcionLabel.numberOfLines = 0;
-            descripcionLabel.lineBreakMode = .byWordWrapping;
-            organizaLabel.numberOfLines = 0;
-            organizaLabel.lineBreakMode = .byWordWrapping;
-            lugarLabel.numberOfLines = 0;
-            lugarLabel.lineBreakMode = .byWordWrapping;
-            fechaLabel.numberOfLines = 0;
-            fechaLabel.lineBreakMode = .byWordWrapping;
-            horaLabel.numberOfLines = 0;
-            horaLabel.lineBreakMode = .byWordWrapping;
-            contactoLabel.numberOfLines = 0;
-            contactoLabel.lineBreakMode = .byWordWrapping;
-            */
             
             //Mostrar texto labels
             tituloLabel.text = evento.titulo;
