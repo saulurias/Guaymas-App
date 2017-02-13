@@ -18,19 +18,19 @@ class DirectorioTableViewCell: UITableViewCell {
 
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib();
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(selected, animated: animated);
     }
 
     //MARK: - Acciones
     @IBAction func botonLlamarPresionado(_ sender: Any) {
-        let numeroLabel = telefonoLabel.text!
-        let numero = numeroLabel.replacingOccurrences(of: " ", with: "")
+        let numeroLabel = telefonoLabel.text!;
+        let numero = numeroLabel.replacingOccurrences(of: " ", with: "");
         
         guard let number = URL(string: "telprompt://622" + numero) else { return }
-        UIApplication.shared.open(number, options: [:], completionHandler: nil)
+        UIApplication.shared.open(number, options: [:], completionHandler: nil);
     }
 }

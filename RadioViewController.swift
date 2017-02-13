@@ -18,14 +18,14 @@ class RadioViewController: UIViewController {
     
     //MARK: - Ciclo de vida de la Vista
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
         if let url = URL (string: urlValue){
-            let requestObj = URLRequest(url: url)
-            _ = webView.loadRequest(requestObj)
+            let requestObj = URLRequest(url: url);
+            _ = webView.loadRequest(requestObj);
         }
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning();
     }
 }

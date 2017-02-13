@@ -16,7 +16,7 @@ protocol NoticiaManagerDelegate {
 class NoticiaManager{
     
     var noticias = [Noticia]();
-    var delegate : NoticiaManagerDelegate? = nil
+    var delegate : NoticiaManagerDelegate? = nil;
     
     func cargarNoticias(pagina: Int){
         let noticias : String = "http://g6.guaymas.gob.mx/eventos/peticiones.php?noticias_ios=true&pagina=\(pagina)&cantidad=5";
@@ -52,10 +52,7 @@ class NoticiaManager{
                     delegate.noticiasCargadas();
                 }
             }
-            
-            print(self.noticias.count)
-            
         }//End Session
-        session.resume()
+        session.resume();
     }//End cargarNoticias()
 }

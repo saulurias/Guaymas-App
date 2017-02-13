@@ -32,21 +32,21 @@ class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
             paginaLabel.text = dependencia.pagina;
             
             //Cargar Ubicación
-            let ubicacionDependencia: CLLocationCoordinate2D?
-            let pLat = dependencia.latitud
-            let pLong = dependencia.longitud
-            let center = CLLocationCoordinate2D(latitude: pLat, longitude: pLong)
+            let ubicacionDependencia: CLLocationCoordinate2D?;
+            let latitud = dependencia.latitud;
+            let longitud = dependencia.longitud;
+            let center = CLLocationCoordinate2D(latitude: latitud, longitude: longitud);
             
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01));
             
-            self.mapView.setRegion(region, animated: true)
+            self.mapView.setRegion(region, animated: true);
             
-            ubicacionDependencia = CLLocationCoordinate2D(latitude: pLat, longitude: pLong);
+            ubicacionDependencia = CLLocationCoordinate2D(latitude: latitud, longitude: longitud);
             
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = ubicacionDependencia!
-            annotation.title = "\(dependencia.nombre)"
-            mapView.addAnnotation(annotation)
+            let anotacion = MKPointAnnotation();
+            anotacion.coordinate = ubicacionDependencia!;
+            anotacion.title = "\(dependencia.nombre)";
+            mapView.addAnnotation(anotacion);
             
         }
     }
@@ -54,15 +54,21 @@ class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        numeroLabel.isUserInteractionEnabled = true
-        let tapNumero: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapNumeroLabel))
-        numeroLabel.addGestureRecognizer(tapNumero)
-        tapNumero.delegate = self
+        self.navigationItem.backBarButtonItem?.title = "Regresar";
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 0/255, blue: 205/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)]
         
-        paginaLabel.isUserInteractionEnabled = true
-        let tapPagina: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPaginaLabel))
-        paginaLabel.addGestureRecognizer(tapPagina)
-        tapPagina.delegate = self
+        
+        numeroLabel.isUserInteractionEnabled = true;
+        let tapNumero: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapNumeroLabel));
+        numeroLabel.addGestureRecognizer(tapNumero);
+        tapNumero.delegate = self;
+        
+        paginaLabel.isUserInteractionEnabled = true;
+        let tapPagina: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapPaginaLabel));
+        paginaLabel.addGestureRecognizer(tapPagina);
+        tapPagina.delegate = self;
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,15 +78,14 @@ class DirectorioViewController: UIViewController, UIGestureRecognizerDelegate {
     //MARK: - Acciones
     
     func didTapNumeroLabel(sender: UITapGestureRecognizer) {
-        let numeroLabel = self.numeroLabel.text!
-        let numero = numeroLabel.replacingOccurrences(of: " ", with: "")
-        guard let number = URL(string: "telprompt://622" + numero) else { return }
-        UIApplication.shared.open(number, options: [:], completionHandler: nil)
+        let numeroLabel = self.numeroLabel.text!;
+        let numero = numeroLabel.replacingOccurrences(of: " ", with: "");
+        guard let number = URL(string: "telprompt://622" + numero) else { return };
+        UIApplication.shared.open(number, options: [:], completionHandler: nil);
     }
     
     func didTapPaginaLabel(sender: UITapGestureRecognizer){
         let url = paginaLabel.text!;
-        print("\(url)")
-        UIApplication.shared.open(NSURL(string: url) as! URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: url) as! URL, options: [:], completionHandler: nil);
     }
 }

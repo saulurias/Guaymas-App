@@ -16,14 +16,12 @@ class EventosTableViewCell: UITableViewCell {
     @IBOutlet weak var lugarLabel: UILabel!
     @IBOutlet weak var imagenEvento: UIImageView!
     
-    
-    
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib();
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(selected, animated: animated);
     }
 
 }

@@ -71,7 +71,7 @@ class DependenciaManager {
                 }
             }
         }//End Session
-        session.resume()
+        session.resume();
     }//End cargarDependencias()
     
 }

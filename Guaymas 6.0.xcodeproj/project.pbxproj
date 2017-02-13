@@ -21,6 +21,7 @@
 		B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188D1E45651400E47B39 /* NoticiaManager.swift */; };
 		B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188F1E45687600E47B39 /* SwiftyJSON.swift */; };
 		B46A18921E45984100E47B39 /* MultimediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A18911E45984100E47B39 /* MultimediaViewController.swift */; };
+		B46C86661E4E58A900656541 /* ReporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C86651E4E58A900656541 /* ReporteViewController.swift */; };
 		B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */; };
 		B48491921E4BFC51004EB809 /* DirectorioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */; };
 		B48491941E4BFC7B004EB809 /* Dependencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491931E4BFC7B004EB809 /* Dependencia.swift */; };
@@ -51,6 +52,7 @@
 		B46A188D1E45651400E47B39 /* NoticiaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaManager.swift; sourceTree = "<group>"; };
 		B46A188F1E45687600E47B39 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
 		B46A18911E45984100E47B39 /* MultimediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimediaViewController.swift; sourceTree = "<group>"; };
+		B46C86651E4E58A900656541 /* ReporteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporteViewController.swift; sourceTree = "<group>"; };
 		B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldCondensed.ttf"; sourceTree = "<group>"; };
 		B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioTableViewController.swift; sourceTree = "<group>"; };
 		B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		B4022E161E2F0F01004AB826 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B46C86641E4E588800656541 /* Controlador Reporte */,
 				B4B281711E4993B300005941 /* Controlador Noticia */,
 				B4B281721E4993C300005941 /* Controlador Evento */,
 				B4B281731E4993E200005941 /* Controlador Radio */,
@@ -162,6 +165,14 @@
 				B46A188F1E45687600E47B39 /* SwiftyJSON.swift */,
 			);
 			name = Plugings;
+			sourceTree = "<group>";
+		};
+		B46C86641E4E588800656541 /* Controlador Reporte */ = {
+			isa = PBXGroup;
+			children = (
+				B46C86651E4E58A900656541 /* ReporteViewController.swift */,
+			);
+			name = "Controlador Reporte";
 			sourceTree = "<group>";
 		};
 		B484918E1E4BFC27004EB809 /* Controlador Directorio */ = {
@@ -280,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46C86661E4E58A900656541 /* ReporteViewController.swift in Sources */,
 				B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */,
 				B48491961E4BFC86004EB809 /* DependenciaManager.swift in Sources */,
 				B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */,
@@ -430,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saulurias.Guaymas-6-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -445,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saulurias.Guaymas-6-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

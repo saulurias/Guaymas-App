@@ -42,7 +42,7 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaDirectorio") as! DirectorioTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaDirectorio") as! DirectorioTableViewCell;
 
         let dependencia = directorioManager.directorio[indexPath.row];
         
@@ -51,8 +51,7 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
         cell.direccionLabel.text = dependencia.direccion;
         cell.linkLabel.text = dependencia.pagina; 
         
-        
-        return cell
+        return cell;
     }
     
     
@@ -63,7 +62,7 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "detallesDependencia" {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    let directorioViewController = segue.destination as! DirectorioViewController
+                    let directorioViewController = segue.destination as! DirectorioViewController;
                     directorioViewController.dependencia = directorioManager.directorio[indexPath.row];
                 }
             }

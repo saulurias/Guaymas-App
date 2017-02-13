@@ -63,6 +63,6 @@ class EventoManager{
                 }
             }
         }//End Session
-        session.resume()
+        session.resume();
     }//End cargarEventos()
 }

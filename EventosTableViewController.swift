@@ -24,7 +24,6 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
         tableView.refreshControl?.endRefreshing();
         tableView.reloadData();
         activityIndicator.stopAnimating();
-        botonEstado.isHidden = false;
     }
     
     func animacionCargando(){
@@ -41,11 +40,10 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
         activityIndicator.startAnimating();
         eventoManager.delegate = self;
         eventoManager.cargarEventos(estado: "proximos");
-        botonEstado.isHidden = true;
     }
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning();
     }
     
     // MARK: - Table view data source
@@ -55,7 +53,7 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaEvento") as! EventosTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaEvento") as! EventosTableViewCell;
         
         let evento = eventoManager.eventos[indexPath.row];
         
@@ -63,7 +61,7 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
         cell.fechaLabel.text = evento.fecha;
         cell.lugarLabel.text = evento.lugar;
         
-        let url = URL(string: evento.url)
+        let url = URL(string: evento.url);
         if url != nil{
             //Cargar imagen
             let session = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -73,17 +71,17 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
                     cell.setNeedsLayout();
                 }
             }//End session
-            session.resume()
+            session.resume();
         }
-        return cell
+        return cell;
     }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detallesEvento" {
             if let indexPath = tableView.indexPathForSelectedRow{
-                let eventosViewController = segue.destination as! EventoViewController
-                eventosViewController.evento = eventoManager.eventos[indexPath.row]
+                let eventosViewController = segue.destination as! EventoViewController;
+                eventosViewController.evento = eventoManager.eventos[indexPath.row];
             }
         }
     }
