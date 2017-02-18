@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DirectorioTableViewController: UITableViewController, DependenciaManagerDelegate {
+class DirectorioTableViewController: UITableViewController, DependenciaManagerDelegate, UISearchBarDelegate {
     
     let directorioManager = DependenciaManager();
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
@@ -24,11 +24,42 @@ class DirectorioTableViewController: UITableViewController, DependenciaManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        searchBarSetUp();
         animacionCargando();
         activityIndicator.startAnimating();
         directorioManager.delegate = self;
         directorioManager.cargarDependencias();
+        
     }
+    
+    
+    func searchBarSetUp(){
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 70));
+        searchBar.showsScopeBar = true;
+        self.tableView.tableHeaderView = searchBar;
+        searchBar.delegate = self;
+    }
+    
+    //MARK: - Search Bar Delegate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty{
+            directorioManager.directorio.removeAll();
+            directorioManager.cargarDependencias();
+            self.tableView.reloadData();
+        }else {
+            filterTableView(text: searchText);
+        }
+    }
+    
+    
+    func filterTableView(text: String){
+        directorioManager.directorio = directorioManager.directorio.filter { (mod) -> Bool in
+            return mod.nombre.lowercased().contains(text.lowercased());
+        }
+        self.tableView.reloadData();
+    }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
