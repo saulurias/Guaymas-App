@@ -28,7 +28,6 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     func noticiasCargadas() {
         activityIndicator.stopAnimating();
         botonSiguiente.isHidden = false;
-        tableView.refreshControl?.endRefreshing()
         tableView.reloadData();
     }
     
@@ -101,7 +100,7 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
     @IBAction func botonSiguientePresionado(_ sender: Any) {
         pagina+=1;
         noticiaManager.noticias.removeAll();
-        tableView.refreshControl?.beginRefreshing()
+        tableView.reloadData();
         noticiaManager.cargarNoticias(pagina: pagina);
         activityIndicator.startAnimating();
         botonAnterior.isHidden = false;
@@ -116,8 +115,8 @@ class NoticiasTableViewController: UITableViewController, NoticiaManagerDelegate
         }else{
             botonAnterior.isHidden = false;
         }
-        tableView.refreshControl?.beginRefreshing()
         noticiaManager.noticias.removeAll();
+        tableView.reloadData();
         noticiaManager.cargarNoticias(pagina: pagina);
     }
     

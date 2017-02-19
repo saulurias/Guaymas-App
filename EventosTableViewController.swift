@@ -21,7 +21,6 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     
     //MARK: - Evento Manager Delegate
     func eventosCargados() {
-        tableView.refreshControl?.endRefreshing();
         tableView.reloadData();
         activityIndicator.stopAnimating();
     }
@@ -88,10 +87,9 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     
     //MARK: - Acciones
     @IBAction func botonEstadoPrecionado(_ sender: Any) {
-            eventoManager.eventos.removeAll();
-            tableView.refreshControl?.beginRefreshing();
-            eventoManager.cargarEventos(estado: "anteriores");
-            botonEstado.isHidden = true;
+        eventoManager.eventos.removeAll();
+        tableView.reloadData();
+        eventoManager.cargarEventos(estado: "anteriores");
+        botonEstado.isHidden = true;
     }
-    
 }

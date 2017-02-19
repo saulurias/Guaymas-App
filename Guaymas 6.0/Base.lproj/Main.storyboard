@@ -977,13 +977,6 @@
                                         <color key="textColor" red="0.46118396469987882" green="0.50684089467005078" blue="0.49655114571965092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEH-Hv-ibV">
-                                        <rect key="frame" x="0.0" y="929" width="320" height="30"/>
-                                        <state key="normal" title="Enviar Reporte"/>
-                                        <connections>
-                                            <action selector="saveBtn:" destination="HUx-DD-5Px" eventType="touchUpInside" id="FIs-9j-yT8"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5I-at-o6R">
                                         <rect key="frame" x="5" y="114" width="100" height="119"/>
                                         <state key="normal" image="bache"/>
@@ -1067,7 +1060,7 @@
                                         <rect key="frame" x="8" y="864" width="249" height="31"/>
                                         <color key="backgroundColor" red="0.50588235294117645" green="0.14117647058823529" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="17"/>
-                                        <state key="normal" title="Tomar Foto" image="Camera">
+                                        <state key="normal" title="  Tomar Foto" image="Camera">
                                             <color key="titleColor" red="1" green="0.90890499620269694" blue="0.99646688923972959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -1079,6 +1072,17 @@
                                         <state key="normal" image="grayscale_otro"/>
                                         <connections>
                                             <action selector="botonOtroSeleccionado:" destination="HUx-DD-5Px" eventType="touchUpInside" id="UwE-kp-oYQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEH-Hv-ibV">
+                                        <rect key="frame" x="0.0" y="929" width="320" height="32"/>
+                                        <color key="backgroundColor" red="0.50588235294117645" green="0.14117647058823529" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="17"/>
+                                        <state key="normal" title="Enviar Reporte">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveBtn:" destination="HUx-DD-5Px" eventType="touchUpInside" id="FIs-9j-yT8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1147,7 +1151,10 @@
                     <connections>
                         <outlet property="botonAlumbrado" destination="6Ud-tL-rbY" id="Tf7-lC-Jtj"/>
                         <outlet property="botonBache" destination="U5I-at-o6R" id="8zi-VE-Is3"/>
+                        <outlet property="botonEnviarReporte" destination="BEH-Hv-ibV" id="qnt-Oq-O74"/>
+                        <outlet property="botonGaleria" destination="KB8-ZE-OYz" id="ONT-Hq-DgB"/>
                         <outlet property="botonOtro" destination="7bH-Di-cgL" id="CH9-Qd-YAe"/>
+                        <outlet property="botonTomarFoto" destination="DP7-4B-sr0" id="7Qz-T6-ueD"/>
                         <outlet property="pickedImaged" destination="LFT-Lo-cCE" id="Muf-6B-oQg"/>
                     </connections>
                 </viewController>

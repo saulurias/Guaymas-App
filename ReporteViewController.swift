@@ -17,20 +17,19 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var botonAlumbrado: UIButton!
     @IBOutlet weak var botonOtro: UIButton!
     
-    
+    @IBOutlet weak var botonEnviarReporte: UIButton!
+    @IBOutlet weak var botonTomarFoto: UIButton!
+    @IBOutlet weak var botonGaleria: UIButton!
     //MARK: - Ciclo de vida de la aplicacion
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        diseñarBotones();
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
     }
-    
-    
-    
-    
     
     
     //MARK: - Acciones Bache, Alumbrado, Otro..
@@ -118,6 +117,12 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func diseñarBotones(){
+        botonTomarFoto.layer.cornerRadius = 4;
+        botonGaleria.layer.cornerRadius = 4;
+        botonEnviarReporte.layer.cornerRadius = 4;
     }
 }
 
