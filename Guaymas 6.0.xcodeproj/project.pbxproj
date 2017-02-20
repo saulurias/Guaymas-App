@@ -18,6 +18,7 @@
 		B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */; };
 		B4047D271E566E970079894E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4047D261E566E970079894E /* Default-568h@2x.png */; };
 		B41194D41E4D3CAC0098E7C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41194D31E4D3CAC0098E7C4 /* MapKit.framework */; };
+		B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */; };
 		B46A188C1E4561B200E47B39 /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */; };
 		B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188D1E45651400E47B39 /* NoticiaManager.swift */; };
 		B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188F1E45687600E47B39 /* SwiftyJSON.swift */; };
@@ -50,6 +51,7 @@
 		B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasViewController.swift; sourceTree = "<group>"; };
 		B4047D261E566E970079894E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B41194D31E4D3CAC0098E7C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionReporte.swift; sourceTree = "<group>"; };
 		B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewCell.swift; sourceTree = "<group>"; };
 		B46A188D1E45651400E47B39 /* NoticiaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaManager.swift; sourceTree = "<group>"; };
 		B46A188F1E45687600E47B39 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B46C86651E4E58A900656541 /* ReporteViewController.swift */,
+				B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */,
 			);
 			name = "Controlador Reporte";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				B4022E021E2F0EDD004AB826 /* ViewController.swift in Sources */,
 				B4B281761E49996D00005941 /* Evento.swift in Sources */,
 				B4B281781E49997700005941 /* EventoManager.swift in Sources */,
+				B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */,
 				B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */,
 				B48491981E4C0552004EB809 /* DirectorioViewController.swift in Sources */,
 				B4022E081E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld in Sources */,

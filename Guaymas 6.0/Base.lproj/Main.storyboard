@@ -991,19 +991,26 @@
                                             <action selector="botonAlumbradoSeleccionado:" destination="HUx-DD-5Px" eventType="touchUpInside" id="GCb-nY-kae"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-fs-CO2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-Di-cgL">
+                                        <rect key="frame" x="215" y="114" width="100" height="119"/>
+                                        <state key="normal" image="grayscale_otro"/>
+                                        <connections>
+                                            <action selector="botonOtroSeleccionado:" destination="HUx-DD-5Px" eventType="touchUpInside" id="UwE-kp-oYQ"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-fs-CO2">
                                         <rect key="frame" x="5" y="247" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Interesado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW8-hT-yNd">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Interesado *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW8-hT-yNd">
                                         <rect key="frame" x="5" y="285" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefono" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-JS-NzM">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefono *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-JS-NzM">
                                         <rect key="frame" x="5" y="323" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1015,14 +1022,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direccion del reporte" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-Ab-mqH">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direccion del reporte *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-Ab-mqH">
                                         <rect key="frame" x="5" y="399" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-Yx-Igg">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-Yx-Igg">
                                         <rect key="frame" x="5" y="441" width="310" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direccion del reporte *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pa-H5-8rZ">
+                                        <rect key="frame" x="8" y="656" width="304" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1033,12 +1046,6 @@
                                             <constraint firstAttribute="height" constant="169" id="aYN-kT-48P"/>
                                         </constraints>
                                     </mapView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direccion del reporte" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pa-H5-8rZ">
-                                        <rect key="frame" x="8" y="656" width="304" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fotodefault" translatesAutoresizingMaskIntoConstraints="NO" id="LFT-Lo-cCE">
                                         <rect key="frame" x="5" y="694" width="310" height="162"/>
                                         <constraints>
@@ -1067,13 +1074,6 @@
                                             <action selector="cameraBtnAction:" destination="HUx-DD-5Px" eventType="touchUpInside" id="hMl-bq-U8r"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-Di-cgL">
-                                        <rect key="frame" x="215" y="114" width="100" height="119"/>
-                                        <state key="normal" image="grayscale_otro"/>
-                                        <connections>
-                                            <action selector="botonOtroSeleccionado:" destination="HUx-DD-5Px" eventType="touchUpInside" id="UwE-kp-oYQ"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEH-Hv-ibV">
                                         <rect key="frame" x="0.0" y="929" width="320" height="32"/>
                                         <color key="backgroundColor" red="0.50588235294117645" green="0.14117647058823529" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1082,6 +1082,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="enviarReporte:" destination="HUx-DD-5Px" eventType="touchUpInside" id="Vpr-N9-bt5"/>
                                             <action selector="saveBtn:" destination="HUx-DD-5Px" eventType="touchUpInside" id="FIs-9j-yT8"/>
                                         </connections>
                                     </button>
@@ -1155,7 +1156,14 @@
                         <outlet property="botonGaleria" destination="KB8-ZE-OYz" id="ONT-Hq-DgB"/>
                         <outlet property="botonOtro" destination="7bH-Di-cgL" id="CH9-Qd-YAe"/>
                         <outlet property="botonTomarFoto" destination="DP7-4B-sr0" id="7Qz-T6-ueD"/>
+                        <outlet property="coloniaTextField" destination="q3a-Yx-Igg" id="A5A-S8-z53"/>
+                        <outlet property="correoTextField" destination="ryQ-XQ-Rij" id="kmK-mT-uT0"/>
+                        <outlet property="descripcionTextField" destination="w6w-fs-CO2" id="Oig-3e-4EN"/>
+                        <outlet property="direccionReporteTextField" destination="9pa-H5-8rZ" id="ZZJ-Fs-hPi"/>
+                        <outlet property="direccionTextField" destination="Ti7-Ab-mqH" id="YJQ-Sx-gHW"/>
+                        <outlet property="interesadoTextField" destination="xW8-hT-yNd" id="Y0Y-Wq-PBb"/>
                         <outlet property="pickedImaged" destination="LFT-Lo-cCE" id="Muf-6B-oQg"/>
+                        <outlet property="telefonoTextField" destination="oHN-JS-NzM" id="Jfk-dG-aOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlH-5y-DZn" userLabel="First Responder" sceneMemberID="firstResponder"/>

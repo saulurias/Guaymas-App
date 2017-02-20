@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var pickedImaged: UIImageView!
@@ -20,16 +20,61 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var botonEnviarReporte: UIButton!
     @IBOutlet weak var botonTomarFoto: UIButton!
     @IBOutlet weak var botonGaleria: UIButton!
+    
+    @IBOutlet weak var descripcionTextField: UITextField!
+    @IBOutlet weak var interesadoTextField: UITextField!
+    @IBOutlet weak var telefonoTextField: UITextField!
+    @IBOutlet weak var correoTextField: UITextField!
+    @IBOutlet weak var direccionTextField: UITextField!
+    @IBOutlet weak var coloniaTextField: UITextField!
+    @IBOutlet weak var direccionReporteTextField: UITextField!
+    
+    
+    
+
+    
+    
     //MARK: - Ciclo de vida de la aplicacion
     
     override func viewDidLoad() {
         super.viewDidLoad();
         diseñarBotones();
+        textFieldsDelegates();
+        self.hideKeyboard();
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
     }
+    
+    
+    //MARK: - TextField Delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        firstReponders(); 
+        return true;
+    }
+    
+    func firstReponders(){
+        descripcionTextField.resignFirstResponder();
+        interesadoTextField.resignFirstResponder();
+        telefonoTextField.resignFirstResponder();
+        correoTextField.resignFirstResponder();
+        direccionTextField.resignFirstResponder();
+        direccionReporteTextField.resignFirstResponder();
+        coloniaTextField.resignFirstResponder();
+    }
+    
+    func textFieldsDelegates(){
+        descripcionTextField.delegate = self;
+        interesadoTextField.delegate = self;
+        telefonoTextField.delegate = self;
+        correoTextField.delegate = self;
+        direccionTextField.delegate = self;
+        direccionReporteTextField.delegate = self;
+        coloniaTextField.delegate = self;
+    }
+
     
     
     //MARK: - Acciones Bache, Alumbrado, Otro..
@@ -55,17 +100,12 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     
+    //MARK: - Acciones Enviar Reporte
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @IBAction func enviarReporte(_ sender: Any) {
+        validarTexto();
+    }
+
     
     //MARK: - Acciones Foto
     @IBAction func cameraBtnAction(_ sender: UIButton) {
@@ -105,24 +145,65 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
      
     
-    // funcion
+    //MARK: - Funciones
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject: AnyObject]) {
         pickedImaged.image = image
         self.dismiss(animated: true, completion: nil);
     }
     
-    func saveNotice(){
-        let alertController = UIAlertController(title: "Image saved", message: "Your picture was successfully save", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present(alertController, animated: true, completion: nil)
-    }
+
     
     func diseñarBotones(){
         botonTomarFoto.layer.cornerRadius = 4;
         botonGaleria.layer.cornerRadius = 4;
         botonEnviarReporte.layer.cornerRadius = 4;
     }
+    
+    
+    func validarTexto(){
+        var validacion = true;
+        if (descripcionTextField.text?.isEmpty)! {
+            descripcionTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            validacion = false;
+        }
+        if (interesadoTextField.text?.isEmpty)! {
+            interesadoTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            validacion = false;
+        }
+        if (telefonoTextField.text?.isEmpty)! {
+            telefonoTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            validacion = false;
+        }
+        if (direccionTextField.text?.isEmpty)! {
+            direccionTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            validacion = false;
+        }
+        if (coloniaTextField.text?.isEmpty)! {
+            coloniaTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            validacion = false;
+        }
+        if (direccionReporteTextField.text?.isEmpty)! {
+            direccionReporteTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            validacion = false;
+        }
+        
+        if validacion == false {
+            mostrarAdvertencia();
+            validacion = true;
+        }
+        
+    }
+    
+    func mostrarAdvertencia(){
+        let alertController = UIAlertController(title: "Campos Requeridos", message: "Favor de llenar todos los campos", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
