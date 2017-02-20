@@ -16,7 +16,6 @@
 		B4022E181E2F0F40004AB826 /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E171E2F0F40004AB826 /* Noticia.swift */; };
 		B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */; };
 		B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */; };
-		B4047D271E566E970079894E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4047D261E566E970079894E /* Default-568h@2x.png */; };
 		B41194D41E4D3CAC0098E7C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41194D31E4D3CAC0098E7C4 /* MapKit.framework */; };
 		B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */; };
 		B46A188C1E4561B200E47B39 /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */; };
@@ -49,7 +48,6 @@
 		B4022E171E2F0F40004AB826 /* Noticia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
 		B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasTableViewController.swift; sourceTree = "<group>"; };
 		B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasViewController.swift; sourceTree = "<group>"; };
-		B4047D261E566E970079894E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B41194D31E4D3CAC0098E7C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionReporte.swift; sourceTree = "<group>"; };
 		B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 		B4022DF31E2F0EDD004AB826 = {
 			isa = PBXGroup;
 			children = (
-				B4047D261E566E970079894E /* Default-568h@2x.png */,
 				B4022E141E2F0EF3004AB826 /* Model */,
 				B4022E151E2F0EFC004AB826 /* View */,
 				B4022E161E2F0F01004AB826 /* Controller */,
@@ -285,7 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4022E0D1E2F0EDD004AB826 /* LaunchScreen.storyboard in Resources */,
-				B4047D271E566E970079894E /* Default-568h@2x.png in Resources */,
 				B4022E0A1E2F0EDD004AB826 /* Assets.xcassets in Resources */,
 				B4022E051E2F0EDD004AB826 /* Main.storyboard in Resources */,
 			);
