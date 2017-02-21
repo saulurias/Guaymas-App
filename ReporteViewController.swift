@@ -31,6 +31,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     
+    
 
     
     
@@ -41,7 +42,6 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         diseñarBotones();
         textFieldsDelegates();
         self.hideKeyboard();
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,7 +103,38 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Acciones Enviar Reporte
     
     @IBAction func enviarReporte(_ sender: Any) {
-        validarTexto();
+        if(validarTexto()){
+            
+            
+            //let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6);
+            //let compressedJPEGImage = UIImage(data:imageData!);
+            
+            
+            let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 1)
+            
+            if(imageData==nil)  { return; }
+            
+            
+            let reporte = Reporte(medio: "MOVIL", interesado: interesadoTextField.text!, direccion: direccionTextField.text!, colonia: coloniaTextField.text!, telefono: telefonoTextField.text!, correo: correoTextField.text!, asunto: descripcionTextField.text!, longitud: -110.889612, latitud: 27.923371, foto: imageData!);
+            
+            
+            
+            let reporteCompleo = ReporteManager();
+            reporteCompleo.postJSON(reporte: reporte);
+            
+            
+            
+            
+            let alertController = UIAlertController(title: "Reporte Enviado", message: "Gracias por su colaboración", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                (result : UIAlertAction) -> Void in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+            
+        
     }
 
     
@@ -140,6 +171,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6)
         let compressedJPEGImage = UIImage(data:imageData!)
         
+        
         UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil)
         
     }
@@ -161,38 +193,51 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-    func validarTexto(){
+    func validarTexto() -> Bool{
         var validacion = true;
         if (descripcionTextField.text?.isEmpty)! {
             descripcionTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
             validacion = false;
+        }else {
+            descripcionTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         }
         if (interesadoTextField.text?.isEmpty)! {
             interesadoTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
             validacion = false;
+        }else {
+            interesadoTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         }
         if (telefonoTextField.text?.isEmpty)! {
             telefonoTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
             validacion = false;
+        }else {
+            telefonoTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         }
         if (direccionTextField.text?.isEmpty)! {
             direccionTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
             validacion = false;
+        }else {
+            direccionTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         }
         if (coloniaTextField.text?.isEmpty)! {
             coloniaTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
             validacion = false;
+        }else {
+            coloniaTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         }
         if (direccionReporteTextField.text?.isEmpty)! {
             direccionReporteTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
             validacion = false;
+        }else {
+            direccionTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         }
         
         if validacion == false {
             mostrarAdvertencia();
-            validacion = true;
+            return false;
+        }else {
+            return true;
         }
-        
     }
     
     func mostrarAdvertencia(){
@@ -202,7 +247,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             (result : UIAlertAction) -> Void in
         }
         alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil);
     }
     
 }

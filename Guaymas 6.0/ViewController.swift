@@ -14,12 +14,6 @@ class ViewController: UIViewController {
     //MARK: - Ciclo de vida de la Vista
     override func viewDidLoad() {
         super.viewDidLoad();
-        
-        self.navigationItem.title = "Guaymas";
-        
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 0/255, blue: 205/255, alpha: 1)
-        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)]
     }
     
 

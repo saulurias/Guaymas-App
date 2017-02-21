@@ -17,6 +17,7 @@
 		B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */; };
 		B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */; };
 		B41194D41E4D3CAC0098E7C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41194D31E4D3CAC0098E7C4 /* MapKit.framework */; };
+		B42B5E241E5B4E9500FA5D77 /* Reporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B5E231E5B4E9500FA5D77 /* Reporte.swift */; };
 		B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */; };
 		B46A188C1E4561B200E47B39 /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */; };
 		B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188D1E45651400E47B39 /* NoticiaManager.swift */; };
@@ -34,6 +35,7 @@
 		B4B281701E4993B000005941 /* EventosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2816F1E4993B000005941 /* EventosTableViewCell.swift */; };
 		B4B281761E49996D00005941 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B281751E49996D00005941 /* Evento.swift */; };
 		B4B281781E49997700005941 /* EventoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B281771E49997700005941 /* EventoManager.swift */; };
+		B4F9A1171E5B5A0000A0F1F4 /* ReporteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9A1161E5B5A0000A0F1F4 /* ReporteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,7 @@
 		B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasTableViewController.swift; sourceTree = "<group>"; };
 		B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasViewController.swift; sourceTree = "<group>"; };
 		B41194D31E4D3CAC0098E7C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B42B5E231E5B4E9500FA5D77 /* Reporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporte.swift; sourceTree = "<group>"; };
 		B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionReporte.swift; sourceTree = "<group>"; };
 		B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewCell.swift; sourceTree = "<group>"; };
 		B46A188D1E45651400E47B39 /* NoticiaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaManager.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		B4B2816F1E4993B000005941 /* EventosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTableViewCell.swift; sourceTree = "<group>"; };
 		B4B281751E49996D00005941 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		B4B281771E49997700005941 /* EventoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoManager.swift; sourceTree = "<group>"; };
+		B4F9A1161E5B5A0000A0F1F4 /* ReporteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				B4B281771E49997700005941 /* EventoManager.swift */,
 				B48491931E4BFC7B004EB809 /* Dependencia.swift */,
 				B48491951E4BFC86004EB809 /* DependenciaManager.swift */,
+				B42B5E231E5B4E9500FA5D77 /* Reporte.swift */,
+				B4F9A1161E5B5A0000A0F1F4 /* ReporteManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */,
 				B48491921E4BFC51004EB809 /* DirectorioTableViewCell.swift in Sources */,
 				B48491941E4BFC7B004EB809 /* Dependencia.swift in Sources */,
+				B4F9A1171E5B5A0000A0F1F4 /* ReporteManager.swift in Sources */,
 				B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */,
 				B4B2816C1E49936000005941 /* EventoViewController.swift in Sources */,
 				B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */,
@@ -311,6 +318,7 @@
 				B4B281781E49997700005941 /* EventoManager.swift in Sources */,
 				B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */,
 				B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */,
+				B42B5E241E5B4E9500FA5D77 /* Reporte.swift in Sources */,
 				B48491981E4C0552004EB809 /* DirectorioViewController.swift in Sources */,
 				B4022E081E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld in Sources */,
 				B4B281701E4993B000005941 /* EventosTableViewCell.swift in Sources */,

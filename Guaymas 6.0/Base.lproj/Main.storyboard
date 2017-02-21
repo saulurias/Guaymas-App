@@ -322,7 +322,7 @@
             </objects>
             <point key="canvasLocation" x="2356.875" y="925.35211267605632"/>
         </scene>
-        <!--View Controller-->
+        <!--Guaymas-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Guaymas_6_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -487,7 +487,7 @@
                             <constraint firstItem="hec-Np-Ebt" firstAttribute="leading" secondItem="73i-Id-BhC" secondAttribute="trailing" constant="-175" id="zsc-pR-ZNi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G3p-BL-X2q" userLabel="Guaymas" colorLabel="IBBuiltInLabel-Blue">
+                    <navigationItem key="navigationItem" title="Guaymas" id="G3p-BL-X2q" userLabel="Guaymas" colorLabel="IBBuiltInLabel-Blue">
                         <barButtonItem key="backBarButtonItem" title="Regresar" id="ebG-Nn-Ykb"/>
                     </navigationItem>
                 </viewController>
@@ -998,43 +998,43 @@
                                             <action selector="botonOtroSeleccionado:" destination="HUx-DD-5Px" eventType="touchUpInside" id="UwE-kp-oYQ"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-fs-CO2">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Descripcion de prueba" borderStyle="roundedRect" placeholder="Descripcion *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-fs-CO2">
                                         <rect key="frame" x="5" y="247" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Interesado *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW8-hT-yNd">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="interesado prueba" borderStyle="roundedRect" placeholder="Interesado *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xW8-hT-yNd">
                                         <rect key="frame" x="5" y="285" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefono *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-JS-NzM">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6221181006" borderStyle="roundedRect" placeholder="Telefono *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHN-JS-NzM">
                                         <rect key="frame" x="5" y="323" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo (opcional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryQ-XQ-Rij">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="saul@mail.com" borderStyle="roundedRect" placeholder="Correo (opcional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryQ-XQ-Rij">
                                         <rect key="frame" x="5" y="361" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direccion del reporte *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-Ab-mqH">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="direccion de prueba" borderStyle="roundedRect" placeholder="Direccion del reporte *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-Ab-mqH">
                                         <rect key="frame" x="5" y="399" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Colonia *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-Yx-Igg">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="colonia de prueba" borderStyle="roundedRect" placeholder="Colonia *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-Yx-Igg">
                                         <rect key="frame" x="5" y="441" width="310" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direccion del reporte *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pa-H5-8rZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="direccion de prueba" borderStyle="roundedRect" placeholder="Direccion del reporte *" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pa-H5-8rZ">
                                         <rect key="frame" x="8" y="656" width="304" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1195,7 +1195,7 @@
     </scenes>
     <resources>
         <image name="Camera" width="25" height="25"/>
-        <image name="Fotodefault" width="256" height="256"/>
+        <image name="Fotodefault" width="100" height="100"/>
         <image name="bache" width="100" height="119"/>
         <image name="btndirectorio" width="200" height="174"/>
         <image name="btneventos" width="200" height="174"/>
