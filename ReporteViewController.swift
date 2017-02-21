@@ -11,16 +11,19 @@ import UIKit
 class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //MARK: - IBOutlets
+    
+    //Image
     @IBOutlet weak var pickedImaged: UIImageView!
     
+    //Buttons
     @IBOutlet weak var botonBache: UIButton!
     @IBOutlet weak var botonAlumbrado: UIButton!
     @IBOutlet weak var botonOtro: UIButton!
-    
     @IBOutlet weak var botonEnviarReporte: UIButton!
     @IBOutlet weak var botonTomarFoto: UIButton!
     @IBOutlet weak var botonGaleria: UIButton!
     
+    //TextFields
     @IBOutlet weak var descripcionTextField: UITextField!
     @IBOutlet weak var interesadoTextField: UITextField!
     @IBOutlet weak var telefonoTextField: UITextField!
@@ -28,11 +31,6 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var direccionTextField: UITextField!
     @IBOutlet weak var coloniaTextField: UITextField!
     @IBOutlet weak var direccionReporteTextField: UITextField!
-    
-    
-    
-    
-
     
     
     //MARK: - Ciclo de vida de la aplicacion
@@ -51,7 +49,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: - TextField Delegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        firstReponders(); 
+        firstReponders();
         return true;
     }
     
@@ -74,11 +72,11 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         direccionReporteTextField.delegate = self;
         coloniaTextField.delegate = self;
     }
-
+    
     
     
     //MARK: - Acciones Bache, Alumbrado, Otro..
-
+    
     @IBAction func botonBacheSeleccionado(_ sender: Any) {
         botonBache.setImage(#imageLiteral(resourceName: "bache"), for: .normal);
         botonAlumbrado.setImage(#imageLiteral(resourceName: "grayscale_alumbrado"), for: .normal);
@@ -90,7 +88,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         botonAlumbrado.setImage(#imageLiteral(resourceName: "alumbrado"), for: .normal);
         botonOtro.setImage(#imageLiteral(resourceName: "grayscale_otro"), for: .normal);
     }
-  
+    
     @IBAction func botonOtroSeleccionado(_ sender: Any) {
         botonBache.setImage(#imageLiteral(resourceName: "grayscale_bache"), for: .normal);
         botonAlumbrado.setImage(#imageLiteral(resourceName: "grayscale_alumbrado"), for: .normal);
@@ -105,11 +103,6 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func enviarReporte(_ sender: Any) {
         if(validarTexto()){
             
-            
-            //let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6);
-            //let compressedJPEGImage = UIImage(data:imageData!);
-            
-            
             let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 1)
             
             if(imageData==nil)  { return; }
@@ -117,13 +110,8 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             let reporte = Reporte(medio: "MOVIL", interesado: interesadoTextField.text!, direccion: direccionTextField.text!, colonia: coloniaTextField.text!, telefono: telefonoTextField.text!, correo: correoTextField.text!, asunto: descripcionTextField.text!, longitud: -110.889612, latitud: 27.923371, foto: imageData!);
             
-            
-            
             let reporteCompleo = ReporteManager();
             reporteCompleo.postJSON(reporte: reporte);
-            
-            
-            
             
             let alertController = UIAlertController(title: "Reporte Enviado", message: "Gracias por su colaboración", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -133,10 +121,10 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-            
+        
         
     }
-
+    
     
     //MARK: - Acciones Foto
     @IBAction func cameraBtnAction(_ sender: UIButton) {
@@ -156,7 +144,6 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    
     @IBAction func photoGalleryAction(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -166,7 +153,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
- 
+    
     @IBAction func saveBtn(_ sender: UIButton) {
         let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6)
         let compressedJPEGImage = UIImage(data:imageData!)
@@ -175,7 +162,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil)
         
     }
-     
+    
     
     //MARK: - Funciones
     
@@ -183,8 +170,6 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         pickedImaged.image = image
         self.dismiss(animated: true, completion: nil);
     }
-    
-
     
     func diseñarBotones(){
         botonTomarFoto.layer.cornerRadius = 4;
@@ -195,41 +180,50 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func validarTexto() -> Bool{
         var validacion = true;
+        let redBorder : UIColor = UIColor.red;
+        let whiteBorder : UIColor = UIColor.white;
+        
         if (descripcionTextField.text?.isEmpty)! {
-            descripcionTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            descripcionTextField.layer.borderColor = redBorder.cgColor;
+            descripcionTextField.layer.borderWidth = 1.0;
             validacion = false;
         }else {
-            descripcionTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+            descripcionTextField.layer.borderColor = whiteBorder.cgColor;
         }
         if (interesadoTextField.text?.isEmpty)! {
-            interesadoTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            interesadoTextField.layer.borderColor = redBorder.cgColor;
+            interesadoTextField.layer.borderWidth = 1.0;
             validacion = false;
         }else {
-            interesadoTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+            interesadoTextField.layer.borderColor = whiteBorder.cgColor;
         }
         if (telefonoTextField.text?.isEmpty)! {
-            telefonoTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            telefonoTextField.layer.borderColor = redBorder.cgColor;
+            telefonoTextField.layer.borderWidth = 1.0;
             validacion = false;
         }else {
-            telefonoTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+            telefonoTextField.layer.borderColor = whiteBorder.cgColor;
         }
         if (direccionTextField.text?.isEmpty)! {
-            direccionTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            direccionTextField.layer.borderColor = redBorder.cgColor;
+            direccionTextField.layer.borderWidth = 1.0;
             validacion = false;
         }else {
-            direccionTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+            direccionTextField.layer.borderColor = whiteBorder.cgColor;
         }
         if (coloniaTextField.text?.isEmpty)! {
-            coloniaTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            coloniaTextField.layer.borderColor = redBorder.cgColor;
+            coloniaTextField.layer.borderWidth = 1.0;
             validacion = false;
         }else {
-            coloniaTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+            coloniaTextField.layer.borderColor = whiteBorder.cgColor;
         }
         if (direccionReporteTextField.text?.isEmpty)! {
-            direccionReporteTextField.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1);
+            direccionReporteTextField.layer.borderColor = redBorder.cgColor;
+            direccionReporteTextField.layer.borderWidth = 1.0;
             validacion = false;
         }else {
-            direccionTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+            direccionTextField.layer.borderColor = whiteBorder.cgColor;
         }
         
         if validacion == false {

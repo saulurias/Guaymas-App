@@ -14,16 +14,10 @@ class ReporteManager{
         
         request.httpMethod = "POST"
         
-        
-        
-        
         let boundary = "Boundary-\(NSUUID().uuidString)"
         
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        
-        
-        //let postString = "nombre=Prueba&correo=prueba@swift.com&telefono=6221181006&edad=21"
         let postString = "\("nombre=\(reporte.interesado)&medio=\(reporte.medio)&dir=\(reporte.direccion)&colonia=\(reporte.colonia)&tel=\(reporte.telefono)&email=\(reporte.correo)&asunto=\(reporte.asunto)&long=\(reporte.longitud)&lat=\(reporte.latitud)&tipo=OTRO)&foto=\(reporte.foto)"))";
         
         
@@ -51,10 +45,10 @@ class ReporteManager{
             let json = JSON(data: data);
             print("NÚMERO DE FOLIO \(json["folio"].int!)");
             
-        
+            
         }
-    
+        
         task.resume();
     }
-
+    
 }
