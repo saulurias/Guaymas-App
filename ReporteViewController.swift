@@ -8,7 +8,17 @@
 
 import UIKit
 
-class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    let colonias : [String] = [
+        "SELECCIONAR COLONIA","100 CASAS","13 DE JULIO","18 DE NOVIEMBRE","22 DE NOVIEMBRE","23 DE MARZO","23 DE NOVIEMBRE","29 DE NOVIEMBRE","5 DE MAYO","ADOLFO DE LA HUERTA","ADOLFO LOPEZ MATEOS","AEROCOMANDER","AEROPUERTO","ALAMO","AMERICAS","AMPLIACION BUROCRATA","AMPLIACION GIL SAMANIEGO","AMPLIACION GOLFO DE CALIFORNIA","AMPLIACION INDEPENDENCIA","AMPLIACION MIGUEL HIDALGO","ANTENA","ANTORCHISTA","ARANJUEZ","ARCOS","ARRECIFES","ATARDECERES","AURORA","BAHIA","BAUTECAS","BELLAVISTA","BICENTENARIO","BRISAS","BUENOS AIRES","BUGAMBILIA","BUROCRATA","CALICHI","CAMPESTRE","CAMPO DE TIRO","CAMPO NUEVO","CANTERA","CARACOL TURISTICO","CARLOS ROMERO D","CASAS BLANCAS","CASTILLO","CENTENARIO","CENTINELA","CENTRO","CERRO GANDARENO","CHOYA","CHUMAMPACO","COLINAS","COLINAS DE MIRAMAR","COLINAS DEL SOL","COLONIA CENTRO","COSTA AZUL","COUNTRY CLUB","CRESTON","CUADRITA","DELICIAS","DIAMANTE","DORADO","EJIDO ALVARO OBREGON","EJIDO FELIPE ANGELES","EJIDO GRACIANO SANCHEZ","EJIDO LAZARO CARDENAS","EJIDO MARIANO ESCOBEDO","EJIDO NUEVO SAN FRANCISCO","EJIDO SAN FERNANDO","EJIDO SANTA MARIA","EJIDO SONORA","EMILIANO ZAPATA","EMPALME","ESTEBAN BACA CALDERON","FATIMA","FEMOSA","FLORES","FOVISSSTE","FRANCISCO MARQUEZ","FUENTE DE PIEDRA","FUENTES","FUENTES RODRIGUEZ","GIL SAMANIEGO","GIL SAMANIEGO 2","GOLFO DE CALIFORNIA","GOLONDRINAS","GUADALUPE","GUADALUPE VICTORIA","GUARIDA DEL TIGRE","GUASIMAS","GUAYMAS CENTRO","GUAYMAS NORTE","HUIRIBIS","HUMBERTO GUTIERREZ","INDEPENDENCIA","INFONAVIT","JACINTO LÓPEZ","JARDINES","JUAN FRANCISCO PATRON MARQUEZ","JUNTAS","LINDAVISTA","LOMA BONITA","LOMA DORADA","LOMA LINDA","LOMAS DE COLOSIO","LOMAS DE CORTES","LOMAS DE FATIMA","LOMAS DE MIRAMAR","LOMAS DE SAN CARLOS","LOMAS DEL GANDARENO","LOMAS MIRAMAR","LOPEZ MATEOS ","MALECON","MANUEL R BOBADILLA","MAR DE CORTES","MARIANA","MARSELLA","MICROONDAS","MIGUEL HIDALGO","MIRADOR","MIRAMAR","MISA","MISION DEL SOL","MISIONEROS","MONTE BELLO","MONTECARLO","MONTELOLITA","MORENO","MURALLA","NICOLAS BRAVO","NIZA","NUEVO PENASCO","OCOTILLO","OCOTILLO 2","OROZ","ORTIZ","PALMAS","PALO VERDE","PARAJE VIEJO","PARQUE INDUSTRIAL","PEDREGAL","PENINSULA","PERIODISTA","PERLA MARINA","PERLAS","PESCADORES","PESQUERO","PETROLERA","PETROLEROS","PINOS","PLAYA DE CORTEZ","PLAYA DE MIRAMAR","PLAYA VISTA 1","PLAYA VISTA 2","PLAYITAS","PLAYITAS 2","PLAZAS","POPULAR","POTAM","PRADERAS","PRADOS","PUEBLO DE BELEM","PUNTA ARENA","PUNTA DE AGUA","PUNTA DE LASTRE","QUINTAS","RAHUN","RANCHITO CAMPESTRE","RASTRO","RASTRO CERRO","RASTRO PLAYA","REAL DE CORTES","RENACIMIENTO","RESBALON","RESIDENCIAL MARSELLA","RINCON DE FATIMA","RINCON DEL BURRO","RIOS","ROBLE","RODRIGO DE TRUANA","RODRIGUEZ ALCAINE","ROMERO DE CHAMPS ","SAHUARAL","SAHUARI","SAHUARIPA","SALVACION","SAN BERNARDO","SAN CARLOS NUEVO GUAYMAS","SAN GERMAN","SAN GERONIMO","SAN GILBERTO","SAN JOSE","SAN JOSE DE GUAYMAS","SAN MARCIAL","SAN MARINO","SAN VICENTE","SANTA CLARA","SANTA FE","SANTA MONICA","SECTOR CRESPON","SONORA","SUENO","TERMOELECTRICA","TETABIATE","TINAJAS","TORIN","TORRES","TRIUNFO DE SANTA ROSA","TULAR","VALIENTE","VALLE BONITO","VALLE DEL MAR","VARAL","VERGELES","VICAM","VILLA SOFIA","VILLA ZARINA ","VILLAHERMOSA","VILLAS","VILLAS DE MIRAMAR","VILLAS DEL PUERTO I","VILLAS DEL PUERTO II","VILLAS DEL PUERTO III","VILLAS DEL TULAR","VILLAS TETAKAWI","VISTA AZUL","VISTA DORADA","YAQUI","YUCATAN"
+    ];
+    
+    
+
+
+    
+    
     
     //MARK: - IBOutlets
     
@@ -29,10 +39,14 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var telefonoTextField: UITextField!
     @IBOutlet weak var correoTextField: UITextField!
     @IBOutlet weak var direccionTextField: UITextField!
-    @IBOutlet weak var coloniaTextField: UITextField!
     @IBOutlet weak var direccionReporteTextField: UITextField!
     
+    //Picker View
+    @IBOutlet weak var coloniaPicker: UIPickerView!
     
+    //MARK: - Variables
+    var coloniaSeleccionada : Int = 0;
+    var tipoReporte : String = "BACHE";
     //MARK: - Ciclo de vida de la aplicacion
     
     override func viewDidLoad() {
@@ -40,10 +54,30 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         diseñarBotones();
         textFieldsDelegates();
         self.hideKeyboard();
+        coloniaPicker.delegate = self;
+        coloniaPicker.dataSource = self;
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
+    }
+    
+    
+    
+    
+    //MARK: - PickerView Delegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return colonias[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return colonias.count;
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1;
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        coloniaSeleccionada = row;
     }
     
     
@@ -60,7 +94,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         correoTextField.resignFirstResponder();
         direccionTextField.resignFirstResponder();
         direccionReporteTextField.resignFirstResponder();
-        coloniaTextField.resignFirstResponder();
+        
     }
     
     func textFieldsDelegates(){
@@ -70,7 +104,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         correoTextField.delegate = self;
         direccionTextField.delegate = self;
         direccionReporteTextField.delegate = self;
-        coloniaTextField.delegate = self;
+        
     }
     
     
@@ -78,18 +112,21 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Acciones Bache, Alumbrado, Otro..
     
     @IBAction func botonBacheSeleccionado(_ sender: Any) {
+        tipoReporte = "BACHE";
         botonBache.setImage(#imageLiteral(resourceName: "bache"), for: .normal);
         botonAlumbrado.setImage(#imageLiteral(resourceName: "grayscale_alumbrado"), for: .normal);
         botonOtro.setImage(#imageLiteral(resourceName: "grayscale_otro"), for: .normal);
     }
     
     @IBAction func botonAlumbradoSeleccionado(_ sender: Any) {
+        tipoReporte = "ALUMBRADO";
         botonBache.setImage(#imageLiteral(resourceName: "grayscale_bache"), for: .normal);
         botonAlumbrado.setImage(#imageLiteral(resourceName: "alumbrado"), for: .normal);
         botonOtro.setImage(#imageLiteral(resourceName: "grayscale_otro"), for: .normal);
     }
     
     @IBAction func botonOtroSeleccionado(_ sender: Any) {
+        tipoReporte = "OTRO";
         botonBache.setImage(#imageLiteral(resourceName: "grayscale_bache"), for: .normal);
         botonAlumbrado.setImage(#imageLiteral(resourceName: "grayscale_alumbrado"), for: .normal);
         botonOtro.setImage(#imageLiteral(resourceName: "otro"), for: .normal);
@@ -107,8 +144,9 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             if(imageData==nil)  { return; }
             
+            let reporte = Reporte(medio: "MOVIL", interesado: interesadoTextField.text!, direccion: direccionTextField.text!, colonia: colonias[coloniaSeleccionada], telefono: telefonoTextField.text!, correo: correoTextField.text!, asunto: descripcionTextField.text!, longitud: -110.889612, latitud: 27.923371, foto: imageData!, tipo: tipoReporte);
             
-            let reporte = Reporte(medio: "MOVIL", interesado: interesadoTextField.text!, direccion: direccionTextField.text!, colonia: coloniaTextField.text!, telefono: telefonoTextField.text!, correo: correoTextField.text!, asunto: descripcionTextField.text!, longitud: -110.889612, latitud: 27.923371, foto: imageData!);
+            
             
             let reporteCompleo = ReporteManager();
             reporteCompleo.postJSON(reporte: reporte);
@@ -118,8 +156,8 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 (result : UIAlertAction) -> Void in
             }
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
+            alertController.addAction(okAction);
+            self.present(alertController, animated: true, completion: nil);
         }
         
         
@@ -129,37 +167,36 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Acciones Foto
     @IBAction func cameraBtnAction(_ sender: UIButton) {
         if(  UIImagePickerController.isSourceTypeAvailable(.camera)){
-            let myPickerController = UIImagePickerController()
-            myPickerController.delegate = self
-            myPickerController.sourceType = .camera
-            self.present(myPickerController, animated: true, completion: nil)
+            let myPickerController = UIImagePickerController();
+            myPickerController.delegate = self;
+            myPickerController.sourceType = .camera;
+            self.present(myPickerController, animated: true, completion: nil);
         }else{
-            let actionController: UIAlertController = UIAlertController(title: "Camara no disponible",message: "", preferredStyle: .alert)
+            let actionController: UIAlertController = UIAlertController(title: "Camara no disponible",message: "", preferredStyle: .alert);
             let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void     in
             }
             
-            actionController.addAction(cancelAction)
-            self.present(actionController, animated: true, completion: nil)
+            actionController.addAction(cancelAction);
+            self.present(actionController, animated: true, completion: nil);
             
         }
     }
     
     @IBAction func photoGalleryAction(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
+            let imagePicker = UIImagePickerController();
+            imagePicker.delegate = self;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true;
+            self.present(imagePicker, animated: true, completion: nil);
         }
     }
     
     @IBAction func saveBtn(_ sender: UIButton) {
-        let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6)
-        let compressedJPEGImage = UIImage(data:imageData!)
+        let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6);
+        let compressedJPEGImage = UIImage(data:imageData!);
         
-        
-        UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil);
         
     }
     
@@ -167,7 +204,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Funciones
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject: AnyObject]) {
-        pickedImaged.image = image
+        pickedImaged.image = image;
         self.dismiss(animated: true, completion: nil);
     }
     
@@ -178,71 +215,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-    func validarTexto() -> Bool{
-        var validacion = true;
-        let redBorder : UIColor = UIColor.red;
-        let whiteBorder : UIColor = UIColor.white;
         
-        if (descripcionTextField.text?.isEmpty)! {
-            descripcionTextField.layer.borderColor = redBorder.cgColor;
-            descripcionTextField.layer.borderWidth = 1.0;
-            validacion = false;
-        }else {
-            descripcionTextField.layer.borderColor = whiteBorder.cgColor;
-        }
-        if (interesadoTextField.text?.isEmpty)! {
-            interesadoTextField.layer.borderColor = redBorder.cgColor;
-            interesadoTextField.layer.borderWidth = 1.0;
-            validacion = false;
-        }else {
-            interesadoTextField.layer.borderColor = whiteBorder.cgColor;
-        }
-        if (telefonoTextField.text?.isEmpty)! {
-            telefonoTextField.layer.borderColor = redBorder.cgColor;
-            telefonoTextField.layer.borderWidth = 1.0;
-            validacion = false;
-        }else {
-            telefonoTextField.layer.borderColor = whiteBorder.cgColor;
-        }
-        if (direccionTextField.text?.isEmpty)! {
-            direccionTextField.layer.borderColor = redBorder.cgColor;
-            direccionTextField.layer.borderWidth = 1.0;
-            validacion = false;
-        }else {
-            direccionTextField.layer.borderColor = whiteBorder.cgColor;
-        }
-        if (coloniaTextField.text?.isEmpty)! {
-            coloniaTextField.layer.borderColor = redBorder.cgColor;
-            coloniaTextField.layer.borderWidth = 1.0;
-            validacion = false;
-        }else {
-            coloniaTextField.layer.borderColor = whiteBorder.cgColor;
-        }
-        if (direccionReporteTextField.text?.isEmpty)! {
-            direccionReporteTextField.layer.borderColor = redBorder.cgColor;
-            direccionReporteTextField.layer.borderWidth = 1.0;
-            validacion = false;
-        }else {
-            direccionTextField.layer.borderColor = whiteBorder.cgColor;
-        }
-        
-        if validacion == false {
-            mostrarAdvertencia();
-            return false;
-        }else {
-            return true;
-        }
-    }
     
-    func mostrarAdvertencia(){
-        let alertController = UIAlertController(title: "Campos Requeridos", message: "Favor de llenar todos los campos", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (result : UIAlertAction) -> Void in
-        }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil);
-    }
     
 }
-

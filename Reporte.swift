@@ -19,5 +19,5 @@ struct Reporte {
     let longitud : Double;
     let latitud : Double;
     let foto : Data;
-    
+    let tipo : String;
 }

@@ -18,7 +18,7 @@ class ReporteManager{
         
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        let postString = "\("nombre=\(reporte.interesado)&medio=\(reporte.medio)&dir=\(reporte.direccion)&colonia=\(reporte.colonia)&tel=\(reporte.telefono)&email=\(reporte.correo)&asunto=\(reporte.asunto)&long=\(reporte.longitud)&lat=\(reporte.latitud)&tipo=OTRO)&foto=\(reporte.foto)"))";
+        let postString = "\("nombre=\(reporte.interesado)&medio=\(reporte.medio)&dir=\(reporte.direccion)&colonia=\(reporte.colonia)&tel=\(reporte.telefono)&email=\(reporte.correo)&asunto=\(reporte.asunto)&long=\(reporte.longitud)&lat=\(reporte.latitud)&tipo=\(reporte.tipo))&foto=\(reporte.foto)"))";
         
         
         request.httpBody = postString.data(using: .utf8)
