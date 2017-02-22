@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
     
     let colonias : [String] = [
         "SELECCIONAR COLONIA","100 CASAS","13 DE JULIO","18 DE NOVIEMBRE","22 DE NOVIEMBRE","23 DE MARZO","23 DE NOVIEMBRE","29 DE NOVIEMBRE","5 DE MAYO","ADOLFO DE LA HUERTA","ADOLFO LOPEZ MATEOS","AEROCOMANDER","AEROPUERTO","ALAMO","AMERICAS","AMPLIACION BUROCRATA","AMPLIACION GIL SAMANIEGO","AMPLIACION GOLFO DE CALIFORNIA","AMPLIACION INDEPENDENCIA","AMPLIACION MIGUEL HIDALGO","ANTENA","ANTORCHISTA","ARANJUEZ","ARCOS","ARRECIFES","ATARDECERES","AURORA","BAHIA","BAUTECAS","BELLAVISTA","BICENTENARIO","BRISAS","BUENOS AIRES","BUGAMBILIA","BUROCRATA","CALICHI","CAMPESTRE","CAMPO DE TIRO","CAMPO NUEVO","CANTERA","CARACOL TURISTICO","CARLOS ROMERO D","CASAS BLANCAS","CASTILLO","CENTENARIO","CENTINELA","CENTRO","CERRO GANDARENO","CHOYA","CHUMAMPACO","COLINAS","COLINAS DE MIRAMAR","COLINAS DEL SOL","COLONIA CENTRO","COSTA AZUL","COUNTRY CLUB","CRESTON","CUADRITA","DELICIAS","DIAMANTE","DORADO","EJIDO ALVARO OBREGON","EJIDO FELIPE ANGELES","EJIDO GRACIANO SANCHEZ","EJIDO LAZARO CARDENAS","EJIDO MARIANO ESCOBEDO","EJIDO NUEVO SAN FRANCISCO","EJIDO SAN FERNANDO","EJIDO SANTA MARIA","EJIDO SONORA","EMILIANO ZAPATA","EMPALME","ESTEBAN BACA CALDERON","FATIMA","FEMOSA","FLORES","FOVISSSTE","FRANCISCO MARQUEZ","FUENTE DE PIEDRA","FUENTES","FUENTES RODRIGUEZ","GIL SAMANIEGO","GIL SAMANIEGO 2","GOLFO DE CALIFORNIA","GOLONDRINAS","GUADALUPE","GUADALUPE VICTORIA","GUARIDA DEL TIGRE","GUASIMAS","GUAYMAS CENTRO","GUAYMAS NORTE","HUIRIBIS","HUMBERTO GUTIERREZ","INDEPENDENCIA","INFONAVIT","JACINTO LÓPEZ","JARDINES","JUAN FRANCISCO PATRON MARQUEZ","JUNTAS","LINDAVISTA","LOMA BONITA","LOMA DORADA","LOMA LINDA","LOMAS DE COLOSIO","LOMAS DE CORTES","LOMAS DE FATIMA","LOMAS DE MIRAMAR","LOMAS DE SAN CARLOS","LOMAS DEL GANDARENO","LOMAS MIRAMAR","LOPEZ MATEOS ","MALECON","MANUEL R BOBADILLA","MAR DE CORTES","MARIANA","MARSELLA","MICROONDAS","MIGUEL HIDALGO","MIRADOR","MIRAMAR","MISA","MISION DEL SOL","MISIONEROS","MONTE BELLO","MONTECARLO","MONTELOLITA","MORENO","MURALLA","NICOLAS BRAVO","NIZA","NUEVO PENASCO","OCOTILLO","OCOTILLO 2","OROZ","ORTIZ","PALMAS","PALO VERDE","PARAJE VIEJO","PARQUE INDUSTRIAL","PEDREGAL","PENINSULA","PERIODISTA","PERLA MARINA","PERLAS","PESCADORES","PESQUERO","PETROLERA","PETROLEROS","PINOS","PLAYA DE CORTEZ","PLAYA DE MIRAMAR","PLAYA VISTA 1","PLAYA VISTA 2","PLAYITAS","PLAYITAS 2","PLAZAS","POPULAR","POTAM","PRADERAS","PRADOS","PUEBLO DE BELEM","PUNTA ARENA","PUNTA DE AGUA","PUNTA DE LASTRE","QUINTAS","RAHUN","RANCHITO CAMPESTRE","RASTRO","RASTRO CERRO","RASTRO PLAYA","REAL DE CORTES","RENACIMIENTO","RESBALON","RESIDENCIAL MARSELLA","RINCON DE FATIMA","RINCON DEL BURRO","RIOS","ROBLE","RODRIGO DE TRUANA","RODRIGUEZ ALCAINE","ROMERO DE CHAMPS ","SAHUARAL","SAHUARI","SAHUARIPA","SALVACION","SAN BERNARDO","SAN CARLOS NUEVO GUAYMAS","SAN GERMAN","SAN GERONIMO","SAN GILBERTO","SAN JOSE","SAN JOSE DE GUAYMAS","SAN MARCIAL","SAN MARINO","SAN VICENTE","SANTA CLARA","SANTA FE","SANTA MONICA","SECTOR CRESPON","SONORA","SUENO","TERMOELECTRICA","TETABIATE","TINAJAS","TORIN","TORRES","TRIUNFO DE SANTA ROSA","TULAR","VALIENTE","VALLE BONITO","VALLE DEL MAR","VARAL","VERGELES","VICAM","VILLA SOFIA","VILLA ZARINA ","VILLAHERMOSA","VILLAS","VILLAS DE MIRAMAR","VILLAS DEL PUERTO I","VILLAS DEL PUERTO II","VILLAS DEL PUERTO III","VILLAS DEL TULAR","VILLAS TETAKAWI","VISTA AZUL","VISTA DORADA","YAQUI","YUCATAN"
@@ -51,10 +52,12 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     //MARK: - Variables
     var coloniaSeleccionada : Int = 0;
     var tipoReporte : String = "BACHE";
-    private var locationManager = CLLocationManager();
-    private var userLocation: CLLocationCoordinate2D?;
     var latitud : Double = 27.923371;
     var longitud : Double = -110.889612;
+    
+    //MARK: - Constantes
+    let manager = CLLocationManager()
+    
     
     //MARK: - Ciclo de vida de la aplicacion
     
@@ -63,9 +66,13 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         diseñarBotones();
         textFieldsDelegates();
         self.hideKeyboard();
-        initializeLocationManager();
         coloniaPicker.delegate = self;
         coloniaPicker.dataSource = self;
+        
+        manager.delegate = self;
+        manager.desiredAccuracy = kCLLocationAccuracyBest;
+        manager.requestWhenInUseAuthorization();
+        manager.startUpdatingLocation();
         
     }
     
@@ -75,36 +82,41 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     //MARK: - MapView
-    
-    private func initializeLocationManager(){
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        locationManager.requestWhenInUseAuthorization();
-        locationManager.startUpdatingLocation();
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locationManager.location?.coordinate{
-            latitud = location.latitude;
-            longitud = location.longitude;
-            userLocation = CLLocationCoordinate2D(latitude: latitud, longitude: longitud);
-            
-            
-            
-            let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            
-            mapView.setRegion(region, animated: true)
-            
-            mapView.removeAnnotations(mapView.annotations)
-            
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = userLocation!
-            annotation.title = "Driver Location"
-            mapView.addAnnotation(annotation)
-            
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations[0]
+        
+        latitud = location.coordinate.latitude;
+        longitud = location.coordinate.longitude;
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        mapView.setRegion(region, animated: true)
+        
+        //print(location.altitude)
+        //print(location.speed)
+        
+        self.mapView.showsUserLocation = true
+        
+        CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
+            if error != nil
+            {
+                print ("THERE WAS AN ERROR")
+            }
+            else
+            {
+                if let place = placemark?[0]
+                {
+                    print("\(place.postalCode!)")
+                    print ("\(place.locality!)");
+                    
+                    
+                }
+            }
         }
     }
-
+   
     
     
     //MARK: - PickerView Delegate
@@ -248,9 +260,9 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func diseñarBotones(){
-        botonTomarFoto.layer.cornerRadius = 4;
-        botonGaleria.layer.cornerRadius = 4;
-        botonEnviarReporte.layer.cornerRadius = 4;
+        botonTomarFoto.layer.cornerRadius = 8;
+        botonGaleria.layer.cornerRadius = 8;
+        botonEnviarReporte.layer.cornerRadius = 8;
     }
     
     

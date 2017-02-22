@@ -53,7 +53,7 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Tomar Fotos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Mostrar Fotos</string>
+	<string>Es necesario acceder a su galeria</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Es necesario acceder a la camara</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
