@@ -1165,6 +1165,7 @@
                         <outlet property="direccionReporteTextField" destination="9pa-H5-8rZ" id="ZZJ-Fs-hPi"/>
                         <outlet property="direccionTextField" destination="Ti7-Ab-mqH" id="YJQ-Sx-gHW"/>
                         <outlet property="interesadoTextField" destination="xW8-hT-yNd" id="Y0Y-Wq-PBb"/>
+                        <outlet property="mapView" destination="BaE-Et-BTq" id="QZ5-1I-t0u"/>
                         <outlet property="pickedImaged" destination="LFT-Lo-cCE" id="Muf-6B-oQg"/>
                         <outlet property="telefonoTextField" destination="oHN-JS-NzM" id="Jfk-dG-aOC"/>
                     </connections>

@@ -55,6 +55,8 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Mostrar Fotos</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Es necesario acceder a la camara para tomar una fotografia</string>
+	<string>Es necesario acceder a la camara</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Es necesario acceder a su ubicación</string>
 </dict>
 </plist>

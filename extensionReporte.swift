@@ -11,8 +11,7 @@ import UIKit
 
 extension ReporteViewController
 {
-    func hideKeyboard()
-    {
+    func hideKeyboard(){
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(ReporteViewController.dismissKeyboard))
@@ -20,8 +19,7 @@ extension ReporteViewController
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard()
-    {
+    func dismissKeyboard(){
         view.endEditing(true)
     }
     
