@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
+class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, ReporteManagerDelegate {
     
     let colonias : [String] = [
         "SELECCIONAR COLONIA","100 CASAS","13 DE JULIO","18 DE NOVIEMBRE","22 DE NOVIEMBRE","23 DE MARZO","23 DE NOVIEMBRE","29 DE NOVIEMBRE","5 DE MAYO","ADOLFO DE LA HUERTA","ADOLFO LOPEZ MATEOS","AEROCOMANDER","AEROPUERTO","ALAMO","AMERICAS","AMPLIACION BUROCRATA","AMPLIACION GIL SAMANIEGO","AMPLIACION GOLFO DE CALIFORNIA","AMPLIACION INDEPENDENCIA","AMPLIACION MIGUEL HIDALGO","ANTENA","ANTORCHISTA","ARANJUEZ","ARCOS","ARRECIFES","ATARDECERES","AURORA","BAHIA","BAUTECAS","BELLAVISTA","BICENTENARIO","BRISAS","BUENOS AIRES","BUGAMBILIA","BUROCRATA","CALICHI","CAMPESTRE","CAMPO DE TIRO","CAMPO NUEVO","CANTERA","CARACOL TURISTICO","CARLOS ROMERO D","CASAS BLANCAS","CASTILLO","CENTENARIO","CENTINELA","CENTRO","CERRO GANDARENO","CHOYA","CHUMAMPACO","COLINAS","COLINAS DE MIRAMAR","COLINAS DEL SOL","COLONIA CENTRO","COSTA AZUL","COUNTRY CLUB","CRESTON","CUADRITA","DELICIAS","DIAMANTE","DORADO","EJIDO ALVARO OBREGON","EJIDO FELIPE ANGELES","EJIDO GRACIANO SANCHEZ","EJIDO LAZARO CARDENAS","EJIDO MARIANO ESCOBEDO","EJIDO NUEVO SAN FRANCISCO","EJIDO SAN FERNANDO","EJIDO SANTA MARIA","EJIDO SONORA","EMILIANO ZAPATA","EMPALME","ESTEBAN BACA CALDERON","FATIMA","FEMOSA","FLORES","FOVISSSTE","FRANCISCO MARQUEZ","FUENTE DE PIEDRA","FUENTES","FUENTES RODRIGUEZ","GIL SAMANIEGO","GIL SAMANIEGO 2","GOLFO DE CALIFORNIA","GOLONDRINAS","GUADALUPE","GUADALUPE VICTORIA","GUARIDA DEL TIGRE","GUASIMAS","GUAYMAS CENTRO","GUAYMAS NORTE","HUIRIBIS","HUMBERTO GUTIERREZ","INDEPENDENCIA","INFONAVIT","JACINTO LÓPEZ","JARDINES","JUAN FRANCISCO PATRON MARQUEZ","JUNTAS","LINDAVISTA","LOMA BONITA","LOMA DORADA","LOMA LINDA","LOMAS DE COLOSIO","LOMAS DE CORTES","LOMAS DE FATIMA","LOMAS DE MIRAMAR","LOMAS DE SAN CARLOS","LOMAS DEL GANDARENO","LOMAS MIRAMAR","LOPEZ MATEOS ","MALECON","MANUEL R BOBADILLA","MAR DE CORTES","MARIANA","MARSELLA","MICROONDAS","MIGUEL HIDALGO","MIRADOR","MIRAMAR","MISA","MISION DEL SOL","MISIONEROS","MONTE BELLO","MONTECARLO","MONTELOLITA","MORENO","MURALLA","NICOLAS BRAVO","NIZA","NUEVO PENASCO","OCOTILLO","OCOTILLO 2","OROZ","ORTIZ","PALMAS","PALO VERDE","PARAJE VIEJO","PARQUE INDUSTRIAL","PEDREGAL","PENINSULA","PERIODISTA","PERLA MARINA","PERLAS","PESCADORES","PESQUERO","PETROLERA","PETROLEROS","PINOS","PLAYA DE CORTEZ","PLAYA DE MIRAMAR","PLAYA VISTA 1","PLAYA VISTA 2","PLAYITAS","PLAYITAS 2","PLAZAS","POPULAR","POTAM","PRADERAS","PRADOS","PUEBLO DE BELEM","PUNTA ARENA","PUNTA DE AGUA","PUNTA DE LASTRE","QUINTAS","RAHUN","RANCHITO CAMPESTRE","RASTRO","RASTRO CERRO","RASTRO PLAYA","REAL DE CORTES","RENACIMIENTO","RESBALON","RESIDENCIAL MARSELLA","RINCON DE FATIMA","RINCON DEL BURRO","RIOS","ROBLE","RODRIGO DE TRUANA","RODRIGUEZ ALCAINE","ROMERO DE CHAMPS ","SAHUARAL","SAHUARI","SAHUARIPA","SALVACION","SAN BERNARDO","SAN CARLOS NUEVO GUAYMAS","SAN GERMAN","SAN GERONIMO","SAN GILBERTO","SAN JOSE","SAN JOSE DE GUAYMAS","SAN MARCIAL","SAN MARINO","SAN VICENTE","SANTA CLARA","SANTA FE","SANTA MONICA","SECTOR CRESPON","SONORA","SUENO","TERMOELECTRICA","TETABIATE","TINAJAS","TORIN","TORRES","TRIUNFO DE SANTA ROSA","TULAR","VALIENTE","VALLE BONITO","VALLE DEL MAR","VARAL","VERGELES","VICAM","VILLA SOFIA","VILLA ZARINA ","VILLAHERMOSA","VILLAS","VILLAS DE MIRAMAR","VILLAS DEL PUERTO I","VILLAS DEL PUERTO II","VILLAS DEL PUERTO III","VILLAS DEL TULAR","VILLAS TETAKAWI","VISTA AZUL","VISTA DORADA","YAQUI","YUCATAN"
@@ -19,7 +19,11 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 
 
-    
+    //MARK: - Reporte Manager Delegate
+    func folioObtenido() {
+        self.folio = reporteManager.folio;
+        cambiarPantalla();
+    }
     
     
     //MARK: - IBOutlets
@@ -54,10 +58,11 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     var tipoReporte : String = "BACHE";
     var latitud : Double = 27.923371;
     var longitud : Double = -110.889612;
+    var folio = Int();
     
     //MARK: - Constantes
-    let manager = CLLocationManager()
-    
+    let manager = CLLocationManager();
+    let reporteManager = ReporteManager();
     
     //MARK: - Ciclo de vida de la aplicacion
     
@@ -68,6 +73,8 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.hideKeyboard();
         coloniaPicker.delegate = self;
         coloniaPicker.dataSource = self;
+        
+        reporteManager.delegate = self;
         
         manager.delegate = self;
         manager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -108,10 +115,8 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             {
                 if let place = placemark?[0]
                 {
-                    print("\(place.postalCode!)")
-                    print ("\(place.locality!)");
-                    
-                    
+                    //print("\(place.postalCode!)")
+                    //print ("\(place.locality!)");
                 }
             }
         }
@@ -186,7 +191,7 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     
-    //MARK: - Acciones Enviar Reporte
+    //MARK: - Accion Enviar Reporte
     
     @IBAction func enviarReporte(_ sender: Any) {
         if(validarTexto()){
@@ -198,10 +203,11 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             let reporte = Reporte(medio: "MOVIL", interesado: interesadoTextField.text!, direccion: direccionTextField.text!, colonia: colonias[coloniaSeleccionada], telefono: telefonoTextField.text!, correo: correoTextField.text!, asunto: descripcionTextField.text!, longitud: longitud, latitud: latitud, foto: imageData!, tipo: tipoReporte);
             
             
+            reporteManager.enviarReporte(reporte: reporte);
             
-            let reporteCompleo = ReporteManager();
-            reporteCompleo.postJSON(reporte: reporte);
             
+            
+            /*
             let alertController = UIAlertController(title: "Reporte Enviado", message: "Gracias por su colaboración", preferredStyle: UIAlertControllerStyle.alert)
             
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
@@ -209,11 +215,22 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
             alertController.addAction(okAction);
             self.present(alertController, animated: true, completion: nil);
+             */
         }
+        
         
         
     }
     
+    func cambiarPantalla(){
+        if let mensajeReporteViewController = self.storyboard?.instantiateViewController(withIdentifier: "mensajeReporteVC") as? MensajeReporteViewController {
+            
+            mensajeReporteViewController.folio = self.folio;
+            mensajeReporteViewController.nombre = interesadoTextField.text;
+            
+            self.navigationController?.pushViewController(mensajeReporteViewController, animated: true)
+        }
+    }
     
     //MARK: - Acciones Foto
     @IBAction func cameraBtnAction(_ sender: UIButton) {
@@ -226,10 +243,8 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             let actionController: UIAlertController = UIAlertController(title: "Camara no disponible",message: "", preferredStyle: .alert);
             let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void     in
             }
-            
             actionController.addAction(cancelAction);
             self.present(actionController, animated: true, completion: nil);
-            
         }
     }
     
@@ -264,9 +279,4 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
         botonGaleria.layer.cornerRadius = 8;
         botonEnviarReporte.layer.cornerRadius = 8;
     }
-    
-    
-        
-    
-    
 }

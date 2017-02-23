@@ -8,9 +8,20 @@
 
 import Foundation
 
+protocol ReporteManagerDelegate {
+    func folioObtenido();
+}
+
+
 class ReporteManager{
-    func postJSON(reporte : Reporte){
+    
+    var folio = Int();
+    var delegate : ReporteManagerDelegate? = nil
+    
+    func enviarReporte(reporte : Reporte){
         var request = URLRequest(url: URL(string: "http://g6.guaymas.gob.mx/reporteciudadano/enviar_reporte.php")!)
+        
+        
         
         request.httpMethod = "POST"
         
@@ -38,12 +49,16 @@ class ReporteManager{
             print("responseString\(responseString)");
             
             
-            print(postString);
-            
-            
             
             let json = JSON(data: data);
-            print("NÚMERO DE FOLIO \(json["folio"].int!)");
+            self.folio = json["folio"].int!
+            
+            if let delegate = self.delegate {
+                DispatchQueue.main.async {
+                    delegate.folioObtenido();
+                }
+            }
+            
             
             
         }

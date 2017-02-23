@@ -107,7 +107,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5NQ-hc-CSB" id="iy2-4U-zit">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="121.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Dependencia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-MD-1vX">
@@ -520,7 +520,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97u-Jl-pN4" id="EpG-8K-DFM">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventosDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Vu9-3k-MRU">
@@ -825,7 +825,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lcf-RK-UpE" id="zfY-jb-hbe">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noticiadefault" translatesAutoresizingMaskIntoConstraints="NO" id="iyD-GE-Z3u">
@@ -1173,6 +1173,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlH-5y-DZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3080.859375" y="174.81698389458271"/>
+        </scene>
+        <!--Mensaje Reporte View Controller-->
+        <scene sceneID="yvA-p3-una">
+            <objects>
+                <viewController restorationIdentifier="mensajeReporteVC" storyboardIdentifier="mensajeReporteVC" wantsFullScreenLayout="YES" id="pOO-Gt-CAd" customClass="MensajeReporteViewController" customModule="Guaymas_6_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ux-qw-gnV"/>
+                        <viewControllerLayoutGuide type="bottom" id="T32-Tb-l87"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jd2-Wg-Vug">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi Reporte" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4OG-ow-1eB">
+                                <rect key="frame" x="16" y="28" width="288" height="77"/>
+                                <color key="backgroundColor" red="0.92028870558375631" green="0.92028870558375631" blue="0.92028870558375631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="jAA-go-oJi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="32"/>
+                                <color key="textColor" red="0.077899917695218174" green="0.16947668269571736" blue="0.26247223984771573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola Usuario" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QRD-mw-YJB">
+                                <rect key="frame" x="16" y="113" width="288" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.14509803921568626" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su peticion a sido" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yna-Tp-spe">
+                                <rect key="frame" x="16" y="151" width="288" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="19"/>
+                                <color key="textColor" red="0.10544767353726073" green="0.53277680837563457" blue="0.48575551901554065" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folio de Seguimiento:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GF4-wY-7Me">
+                                <rect key="frame" x="16" y="181.5" width="288" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.15110505068229452" green="0.38921179383809623" blue="0.43551231088882247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-r2-aQd">
+                                <rect key="frame" x="16" y="209" width="288" height="20"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="17"/>
+                                <color key="textColor" red="0.15110505068229452" green="0.38921179383809623" blue="0.43551231088882247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal de la dirección.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33q-yc-nY4">
+                                <rect key="frame" x="16" y="237" width="288" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="19"/>
+                                <color key="textColor" red="0.10544767353726073" green="0.53277680837563457" blue="0.48575551901554065" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel: (622) 2 07 57 | (622) 2 44 11 | 072" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55P-mU-K3q">
+                                <rect key="frame" x="16" y="267" width="288" height="20"/>
+                                <fontDescription key="fontDescription" name="Roboto-BoldCondensed" family="Roboto" pointSize="17"/>
+                                <color key="textColor" red="0.10544767353726073" green="0.53277680837563457" blue="0.48575551901554065" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GF4-wY-7Me" firstAttribute="top" secondItem="yna-Tp-spe" secondAttribute="bottom" constant="8" id="3xW-sA-kKq"/>
+                            <constraint firstItem="yna-Tp-spe" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="B0H-Dv-NXV"/>
+                            <constraint firstItem="QRD-mw-YJB" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="B3W-2R-qFh"/>
+                            <constraint firstItem="Yoj-r2-aQd" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="By3-8O-yWb"/>
+                            <constraint firstItem="33q-yc-nY4" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="Cye-RT-67P"/>
+                            <constraint firstItem="4OG-ow-1eB" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="Hbf-C5-zpk"/>
+                            <constraint firstItem="4OG-ow-1eB" firstAttribute="top" secondItem="9Ux-qw-gnV" secondAttribute="bottom" constant="8" id="JSJ-6j-ztK"/>
+                            <constraint firstItem="QRD-mw-YJB" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="Oqv-hI-OhF"/>
+                            <constraint firstItem="55P-mU-K3q" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="T5C-Ql-X9j"/>
+                            <constraint firstItem="yna-Tp-spe" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="TSm-i7-rio"/>
+                            <constraint firstItem="GF4-wY-7Me" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="UEU-C2-boj"/>
+                            <constraint firstItem="4OG-ow-1eB" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="WLb-eB-YHT"/>
+                            <constraint firstItem="33q-yc-nY4" firstAttribute="top" secondItem="Yoj-r2-aQd" secondAttribute="bottom" constant="8" id="a3k-ih-yRJ"/>
+                            <constraint firstItem="55P-mU-K3q" firstAttribute="top" secondItem="33q-yc-nY4" secondAttribute="bottom" constant="7.5" id="bBf-BN-YL9"/>
+                            <constraint firstItem="GF4-wY-7Me" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="cAT-gr-hG5"/>
+                            <constraint firstItem="Yoj-r2-aQd" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="dKo-vO-bVi"/>
+                            <constraint firstItem="Yoj-r2-aQd" firstAttribute="top" secondItem="GF4-wY-7Me" secondAttribute="bottom" constant="4" id="dNh-te-Wms"/>
+                            <constraint firstItem="55P-mU-K3q" firstAttribute="trailing" secondItem="jd2-Wg-Vug" secondAttribute="trailingMargin" id="gqs-Hk-MFf"/>
+                            <constraint firstItem="QRD-mw-YJB" firstAttribute="top" secondItem="4OG-ow-1eB" secondAttribute="bottom" constant="8" id="khO-Gc-4SV"/>
+                            <constraint firstItem="yna-Tp-spe" firstAttribute="top" secondItem="QRD-mw-YJB" secondAttribute="bottom" constant="14.5" id="uv5-GU-pnE"/>
+                            <constraint firstItem="33q-yc-nY4" firstAttribute="leading" secondItem="jd2-Wg-Vug" secondAttribute="leadingMargin" id="w0Y-DW-1Jq"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="folioLabel" destination="Yoj-r2-aQd" id="aTN-UW-Vrf"/>
+                        <outlet property="informeLabel" destination="33q-yc-nY4" id="E1c-Sn-1SM"/>
+                        <outlet property="mensajeLabel" destination="yna-Tp-spe" id="uEB-Ae-2Jm"/>
+                        <outlet property="saludoUsuarioLabel" destination="QRD-mw-YJB" id="Wfr-Df-Vzc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="riu-ZO-cXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3173" y="954"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wN4-L6-reo">
