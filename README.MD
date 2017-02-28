@@ -18,3 +18,4 @@ Dentro de las tecnologías utilizadas se encuentran:
 + Web View
 + Git & Github
 
+La aplicación fue creada bajo el patron de arquitectura MVC (Modelo-Vista-Controlador)
