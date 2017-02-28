@@ -7,40 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4012E051E5E60A8000DF0F6 /* MensajeReporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4012E041E5E60A8000DF0F6 /* MensajeReporteViewController.swift */; };
 		B4022E001E2F0EDD004AB826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022DFF1E2F0EDD004AB826 /* AppDelegate.swift */; };
 		B4022E021E2F0EDD004AB826 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E011E2F0EDD004AB826 /* ViewController.swift */; };
 		B4022E081E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4022E061E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld */; };
 		B4022E0A1E2F0EDD004AB826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4022E091E2F0EDD004AB826 /* Assets.xcassets */; };
 		B4022E0D1E2F0EDD004AB826 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4022E0B1E2F0EDD004AB826 /* LaunchScreen.storyboard */; };
-		B4022E181E2F0F40004AB826 /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E171E2F0F40004AB826 /* Noticia.swift */; };
-		B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */; };
-		B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */; };
 		B41194D41E4D3CAC0098E7C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41194D31E4D3CAC0098E7C4 /* MapKit.framework */; };
-		B42B5E241E5B4E9500FA5D77 /* Reporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B5E231E5B4E9500FA5D77 /* Reporte.swift */; };
-		B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */; };
-		B46A188C1E4561B200E47B39 /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */; };
-		B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188D1E45651400E47B39 /* NoticiaManager.swift */; };
 		B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A188F1E45687600E47B39 /* SwiftyJSON.swift */; };
-		B46A18921E45984100E47B39 /* MultimediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A18911E45984100E47B39 /* MultimediaViewController.swift */; };
-		B46C86661E4E58A900656541 /* ReporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C86651E4E58A900656541 /* ReporteViewController.swift */; };
-		B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */; };
-		B48491921E4BFC51004EB809 /* DirectorioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */; };
-		B48491941E4BFC7B004EB809 /* Dependencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491931E4BFC7B004EB809 /* Dependencia.swift */; };
-		B48491961E4BFC86004EB809 /* DependenciaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491951E4BFC86004EB809 /* DependenciaManager.swift */; };
-		B48491981E4C0552004EB809 /* DirectorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48491971E4C0552004EB809 /* DirectorioViewController.swift */; };
 		B49CC15B1E5E70880098E82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49CC1591E5E70880098E82C /* Main.storyboard */; };
-		B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B146871E35443C00B2537C /* RadioViewController.swift */; };
-		B4B2816C1E49936000005941 /* EventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2816B1E49936000005941 /* EventoViewController.swift */; };
-		B4B2816E1E49938100005941 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2816D1E49938100005941 /* EventosTableViewController.swift */; };
-		B4B281701E4993B000005941 /* EventosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2816F1E4993B000005941 /* EventosTableViewCell.swift */; };
-		B4B281761E49996D00005941 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B281751E49996D00005941 /* Evento.swift */; };
-		B4B281781E49997700005941 /* EventoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B281771E49997700005941 /* EventoManager.swift */; };
-		B4F9A1171E5B5A0000A0F1F4 /* ReporteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9A1161E5B5A0000A0F1F4 /* ReporteManager.swift */; };
+		B4FD5C6E1E652FC900EABD62 /* Dependencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C661E652FC900EABD62 /* Dependencia.swift */; };
+		B4FD5C6F1E652FC900EABD62 /* DependenciaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C671E652FC900EABD62 /* DependenciaManager.swift */; };
+		B4FD5C701E652FC900EABD62 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C681E652FC900EABD62 /* Evento.swift */; };
+		B4FD5C711E652FC900EABD62 /* EventoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C691E652FC900EABD62 /* EventoManager.swift */; };
+		B4FD5C721E652FC900EABD62 /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C6A1E652FC900EABD62 /* Noticia.swift */; };
+		B4FD5C731E652FC900EABD62 /* NoticiaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C6B1E652FC900EABD62 /* NoticiaManager.swift */; };
+		B4FD5C741E652FC900EABD62 /* Reporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C6C1E652FC900EABD62 /* Reporte.swift */; };
+		B4FD5C751E652FC900EABD62 /* ReporteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C6D1E652FC900EABD62 /* ReporteManager.swift */; };
+		B4FD5C791E652FF800EABD62 /* DirectorioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C761E652FF800EABD62 /* DirectorioTableViewCell.swift */; };
+		B4FD5C7A1E652FF800EABD62 /* EventosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C771E652FF800EABD62 /* EventosTableViewCell.swift */; };
+		B4FD5C7B1E652FF800EABD62 /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C781E652FF800EABD62 /* NoticiaTableViewCell.swift */; };
+		B4FD5C7F1E65303C00EABD62 /* extensionReporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C7C1E65303C00EABD62 /* extensionReporte.swift */; };
+		B4FD5C801E65303C00EABD62 /* MensajeReporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C7D1E65303C00EABD62 /* MensajeReporteViewController.swift */; };
+		B4FD5C811E65303C00EABD62 /* ReporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C7E1E65303C00EABD62 /* ReporteViewController.swift */; };
+		B4FD5C841E65304D00EABD62 /* NoticiasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C821E65304D00EABD62 /* NoticiasTableViewController.swift */; };
+		B4FD5C851E65304D00EABD62 /* NoticiasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C831E65304D00EABD62 /* NoticiasViewController.swift */; };
+		B4FD5C881E65306300EABD62 /* EventosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C861E65306300EABD62 /* EventosTableViewController.swift */; };
+		B4FD5C891E65306300EABD62 /* EventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C871E65306300EABD62 /* EventoViewController.swift */; };
+		B4FD5C8B1E65307000EABD62 /* RadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C8A1E65307000EABD62 /* RadioViewController.swift */; };
+		B4FD5C8D1E65307B00EABD62 /* MultimediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C8C1E65307B00EABD62 /* MultimediaViewController.swift */; };
+		B4FD5C901E65308500EABD62 /* DirectorioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C8E1E65308500EABD62 /* DirectorioTableViewController.swift */; };
+		B4FD5C911E65308500EABD62 /* DirectorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FD5C8F1E65308500EABD62 /* DirectorioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B4012E041E5E60A8000DF0F6 /* MensajeReporteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensajeReporteViewController.swift; sourceTree = "<group>"; };
 		B4022DFC1E2F0EDD004AB826 /* Guaymas 6.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guaymas 6.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4022DFF1E2F0EDD004AB826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4022E011E2F0EDD004AB826 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Guaymas 6.0/ViewController.swift"; sourceTree = "<group>"; };
@@ -48,31 +47,32 @@
 		B4022E091E2F0EDD004AB826 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4022E0C1E2F0EDD004AB826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4022E0E1E2F0EDD004AB826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4022E171E2F0F40004AB826 /* Noticia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
-		B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasTableViewController.swift; sourceTree = "<group>"; };
-		B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiasViewController.swift; sourceTree = "<group>"; };
 		B41194D31E4D3CAC0098E7C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		B42B5E231E5B4E9500FA5D77 /* Reporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporte.swift; sourceTree = "<group>"; };
-		B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionReporte.swift; sourceTree = "<group>"; };
-		B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewCell.swift; sourceTree = "<group>"; };
-		B46A188D1E45651400E47B39 /* NoticiaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaManager.swift; sourceTree = "<group>"; };
 		B46A188F1E45687600E47B39 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
-		B46A18911E45984100E47B39 /* MultimediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimediaViewController.swift; sourceTree = "<group>"; };
-		B46C86651E4E58A900656541 /* ReporteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporteViewController.swift; sourceTree = "<group>"; };
 		B472B6ED1E4A8F8C00AC6B06 /* Roboto-BoldCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldCondensed.ttf"; sourceTree = "<group>"; };
-		B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioTableViewController.swift; sourceTree = "<group>"; };
-		B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioTableViewCell.swift; sourceTree = "<group>"; };
-		B48491931E4BFC7B004EB809 /* Dependencia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencia.swift; sourceTree = "<group>"; };
-		B48491951E4BFC86004EB809 /* DependenciaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciaManager.swift; sourceTree = "<group>"; };
-		B48491971E4C0552004EB809 /* DirectorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectorioViewController.swift; sourceTree = "<group>"; };
 		B49CC15A1E5E70880098E82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4B146871E35443C00B2537C /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewController.swift; sourceTree = "<group>"; };
-		B4B2816B1E49936000005941 /* EventoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoViewController.swift; sourceTree = "<group>"; };
-		B4B2816D1E49938100005941 /* EventosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTableViewController.swift; sourceTree = "<group>"; };
-		B4B2816F1E4993B000005941 /* EventosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTableViewCell.swift; sourceTree = "<group>"; };
-		B4B281751E49996D00005941 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
-		B4B281771E49997700005941 /* EventoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoManager.swift; sourceTree = "<group>"; };
-		B4F9A1161E5B5A0000A0F1F4 /* ReporteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporteManager.swift; sourceTree = "<group>"; };
+		B4FD5C661E652FC900EABD62 /* Dependencia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dependencia.swift; path = Model/Dependencia.swift; sourceTree = "<group>"; };
+		B4FD5C671E652FC900EABD62 /* DependenciaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependenciaManager.swift; path = Model/DependenciaManager.swift; sourceTree = "<group>"; };
+		B4FD5C681E652FC900EABD62 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Evento.swift; path = Model/Evento.swift; sourceTree = "<group>"; };
+		B4FD5C691E652FC900EABD62 /* EventoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventoManager.swift; path = Model/EventoManager.swift; sourceTree = "<group>"; };
+		B4FD5C6A1E652FC900EABD62 /* Noticia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Noticia.swift; path = Model/Noticia.swift; sourceTree = "<group>"; };
+		B4FD5C6B1E652FC900EABD62 /* NoticiaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticiaManager.swift; path = Model/NoticiaManager.swift; sourceTree = "<group>"; };
+		B4FD5C6C1E652FC900EABD62 /* Reporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reporte.swift; path = Model/Reporte.swift; sourceTree = "<group>"; };
+		B4FD5C6D1E652FC900EABD62 /* ReporteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReporteManager.swift; path = Model/ReporteManager.swift; sourceTree = "<group>"; };
+		B4FD5C761E652FF800EABD62 /* DirectorioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectorioTableViewCell.swift; path = View/DirectorioTableViewCell.swift; sourceTree = "<group>"; };
+		B4FD5C771E652FF800EABD62 /* EventosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventosTableViewCell.swift; path = View/EventosTableViewCell.swift; sourceTree = "<group>"; };
+		B4FD5C781E652FF800EABD62 /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticiaTableViewCell.swift; path = View/NoticiaTableViewCell.swift; sourceTree = "<group>"; };
+		B4FD5C7C1E65303C00EABD62 /* extensionReporte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = extensionReporte.swift; path = Controller/extensionReporte.swift; sourceTree = "<group>"; };
+		B4FD5C7D1E65303C00EABD62 /* MensajeReporteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MensajeReporteViewController.swift; path = Controller/MensajeReporteViewController.swift; sourceTree = "<group>"; };
+		B4FD5C7E1E65303C00EABD62 /* ReporteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReporteViewController.swift; path = Controller/ReporteViewController.swift; sourceTree = "<group>"; };
+		B4FD5C821E65304D00EABD62 /* NoticiasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticiasTableViewController.swift; path = Controller/NoticiasTableViewController.swift; sourceTree = "<group>"; };
+		B4FD5C831E65304D00EABD62 /* NoticiasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoticiasViewController.swift; path = Controller/NoticiasViewController.swift; sourceTree = "<group>"; };
+		B4FD5C861E65306300EABD62 /* EventosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventosTableViewController.swift; path = Controller/EventosTableViewController.swift; sourceTree = "<group>"; };
+		B4FD5C871E65306300EABD62 /* EventoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventoViewController.swift; path = Controller/EventoViewController.swift; sourceTree = "<group>"; };
+		B4FD5C8A1E65307000EABD62 /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioViewController.swift; path = Controller/RadioViewController.swift; sourceTree = "<group>"; };
+		B4FD5C8C1E65307B00EABD62 /* MultimediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultimediaViewController.swift; path = Controller/MultimediaViewController.swift; sourceTree = "<group>"; };
+		B4FD5C8E1E65308500EABD62 /* DirectorioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectorioTableViewController.swift; path = Controller/DirectorioTableViewController.swift; sourceTree = "<group>"; };
+		B4FD5C8F1E65308500EABD62 /* DirectorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectorioViewController.swift; path = Controller/DirectorioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,14 +124,14 @@
 		B4022E141E2F0EF3004AB826 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B4022E171E2F0F40004AB826 /* Noticia.swift */,
-				B46A188D1E45651400E47B39 /* NoticiaManager.swift */,
-				B4B281751E49996D00005941 /* Evento.swift */,
-				B4B281771E49997700005941 /* EventoManager.swift */,
-				B48491931E4BFC7B004EB809 /* Dependencia.swift */,
-				B48491951E4BFC86004EB809 /* DependenciaManager.swift */,
-				B42B5E231E5B4E9500FA5D77 /* Reporte.swift */,
-				B4F9A1161E5B5A0000A0F1F4 /* ReporteManager.swift */,
+				B4FD5C661E652FC900EABD62 /* Dependencia.swift */,
+				B4FD5C671E652FC900EABD62 /* DependenciaManager.swift */,
+				B4FD5C681E652FC900EABD62 /* Evento.swift */,
+				B4FD5C691E652FC900EABD62 /* EventoManager.swift */,
+				B4FD5C6A1E652FC900EABD62 /* Noticia.swift */,
+				B4FD5C6B1E652FC900EABD62 /* NoticiaManager.swift */,
+				B4FD5C6C1E652FC900EABD62 /* Reporte.swift */,
+				B4FD5C6D1E652FC900EABD62 /* ReporteManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,9 +139,9 @@
 		B4022E151E2F0EFC004AB826 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B48491911E4BFC51004EB809 /* DirectorioTableViewCell.swift */,
-				B4B2816F1E4993B000005941 /* EventosTableViewCell.swift */,
-				B46A188B1E4561B200E47B39 /* NoticiaTableViewCell.swift */,
+				B4FD5C761E652FF800EABD62 /* DirectorioTableViewCell.swift */,
+				B4FD5C771E652FF800EABD62 /* EventosTableViewCell.swift */,
+				B4FD5C781E652FF800EABD62 /* NoticiaTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -180,9 +180,9 @@
 		B46C86641E4E588800656541 /* Controlador Reporte */ = {
 			isa = PBXGroup;
 			children = (
-				B46C86651E4E58A900656541 /* ReporteViewController.swift */,
-				B44B2A061E5AA8F70026DD34 /* extensionReporte.swift */,
-				B4012E041E5E60A8000DF0F6 /* MensajeReporteViewController.swift */,
+				B4FD5C7C1E65303C00EABD62 /* extensionReporte.swift */,
+				B4FD5C7D1E65303C00EABD62 /* MensajeReporteViewController.swift */,
+				B4FD5C7E1E65303C00EABD62 /* ReporteViewController.swift */,
 			);
 			name = "Controlador Reporte";
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 		B484918E1E4BFC27004EB809 /* Controlador Directorio */ = {
 			isa = PBXGroup;
 			children = (
-				B48491971E4C0552004EB809 /* DirectorioViewController.swift */,
-				B484918F1E4BFC3F004EB809 /* DirectorioTableViewController.swift */,
+				B4FD5C8E1E65308500EABD62 /* DirectorioTableViewController.swift */,
+				B4FD5C8F1E65308500EABD62 /* DirectorioViewController.swift */,
 			);
 			name = "Controlador Directorio";
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 		B4B281711E4993B300005941 /* Controlador Noticia */ = {
 			isa = PBXGroup;
 			children = (
-				B4022E1B1E2F11DE004AB826 /* NoticiasViewController.swift */,
-				B4022E191E2F11C6004AB826 /* NoticiasTableViewController.swift */,
+				B4FD5C821E65304D00EABD62 /* NoticiasTableViewController.swift */,
+				B4FD5C831E65304D00EABD62 /* NoticiasViewController.swift */,
 			);
 			name = "Controlador Noticia";
 			sourceTree = "<group>";
@@ -208,8 +208,8 @@
 		B4B281721E4993C300005941 /* Controlador Evento */ = {
 			isa = PBXGroup;
 			children = (
-				B4B2816B1E49936000005941 /* EventoViewController.swift */,
-				B4B2816D1E49938100005941 /* EventosTableViewController.swift */,
+				B4FD5C861E65306300EABD62 /* EventosTableViewController.swift */,
+				B4FD5C871E65306300EABD62 /* EventoViewController.swift */,
 			);
 			name = "Controlador Evento";
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 		B4B281731E4993E200005941 /* Controlador Radio */ = {
 			isa = PBXGroup;
 			children = (
-				B4B146871E35443C00B2537C /* RadioViewController.swift */,
+				B4FD5C8A1E65307000EABD62 /* RadioViewController.swift */,
 			);
 			name = "Controlador Radio";
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 		B4B281741E4993E800005941 /* Controlador Multimedia */ = {
 			isa = PBXGroup;
 			children = (
-				B46A18911E45984100E47B39 /* MultimediaViewController.swift */,
+				B4FD5C8C1E65307B00EABD62 /* MultimediaViewController.swift */,
 			);
 			name = "Controlador Multimedia";
 			sourceTree = "<group>";
@@ -303,32 +303,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B46C86661E4E58A900656541 /* ReporteViewController.swift in Sources */,
-				B4022E1C1E2F11DE004AB826 /* NoticiasViewController.swift in Sources */,
-				B48491961E4BFC86004EB809 /* DependenciaManager.swift in Sources */,
-				B4B146881E35443C00B2537C /* RadioViewController.swift in Sources */,
-				B46A18921E45984100E47B39 /* MultimediaViewController.swift in Sources */,
-				B4B2816E1E49938100005941 /* EventosTableViewController.swift in Sources */,
-				B4022E1A1E2F11C6004AB826 /* NoticiasTableViewController.swift in Sources */,
-				B48491921E4BFC51004EB809 /* DirectorioTableViewCell.swift in Sources */,
-				B48491941E4BFC7B004EB809 /* Dependencia.swift in Sources */,
-				B4F9A1171E5B5A0000A0F1F4 /* ReporteManager.swift in Sources */,
+				B4FD5C7F1E65303C00EABD62 /* extensionReporte.swift in Sources */,
+				B4FD5C851E65304D00EABD62 /* NoticiasViewController.swift in Sources */,
+				B4FD5C901E65308500EABD62 /* DirectorioTableViewController.swift in Sources */,
+				B4FD5C7B1E652FF800EABD62 /* NoticiaTableViewCell.swift in Sources */,
+				B4FD5C751E652FC900EABD62 /* ReporteManager.swift in Sources */,
 				B46A18901E45687600E47B39 /* SwiftyJSON.swift in Sources */,
-				B4B2816C1E49936000005941 /* EventoViewController.swift in Sources */,
-				B46A188E1E45651400E47B39 /* NoticiaManager.swift in Sources */,
+				B4FD5C741E652FC900EABD62 /* Reporte.swift in Sources */,
+				B4FD5C881E65306300EABD62 /* EventosTableViewController.swift in Sources */,
+				B4FD5C911E65308500EABD62 /* DirectorioViewController.swift in Sources */,
+				B4FD5C731E652FC900EABD62 /* NoticiaManager.swift in Sources */,
+				B4FD5C811E65303C00EABD62 /* ReporteViewController.swift in Sources */,
 				B4022E021E2F0EDD004AB826 /* ViewController.swift in Sources */,
-				B4012E051E5E60A8000DF0F6 /* MensajeReporteViewController.swift in Sources */,
-				B4B281761E49996D00005941 /* Evento.swift in Sources */,
-				B4B281781E49997700005941 /* EventoManager.swift in Sources */,
-				B44B2A071E5AA8F70026DD34 /* extensionReporte.swift in Sources */,
-				B48491901E4BFC3F004EB809 /* DirectorioTableViewController.swift in Sources */,
-				B42B5E241E5B4E9500FA5D77 /* Reporte.swift in Sources */,
-				B48491981E4C0552004EB809 /* DirectorioViewController.swift in Sources */,
+				B4FD5C721E652FC900EABD62 /* Noticia.swift in Sources */,
+				B4FD5C6F1E652FC900EABD62 /* DependenciaManager.swift in Sources */,
+				B4FD5C841E65304D00EABD62 /* NoticiasTableViewController.swift in Sources */,
+				B4FD5C8D1E65307B00EABD62 /* MultimediaViewController.swift in Sources */,
+				B4FD5C891E65306300EABD62 /* EventoViewController.swift in Sources */,
+				B4FD5C7A1E652FF800EABD62 /* EventosTableViewCell.swift in Sources */,
+				B4FD5C701E652FC900EABD62 /* Evento.swift in Sources */,
+				B4FD5C711E652FC900EABD62 /* EventoManager.swift in Sources */,
 				B4022E081E2F0EDD004AB826 /* Guaymas_6_0.xcdatamodeld in Sources */,
-				B4B281701E4993B000005941 /* EventosTableViewCell.swift in Sources */,
+				B4FD5C801E65303C00EABD62 /* MensajeReporteViewController.swift in Sources */,
+				B4FD5C8B1E65307000EABD62 /* RadioViewController.swift in Sources */,
 				B4022E001E2F0EDD004AB826 /* AppDelegate.swift in Sources */,
-				B4022E181E2F0F40004AB826 /* Noticia.swift in Sources */,
-				B46A188C1E4561B200E47B39 /* NoticiaTableViewCell.swift in Sources */,
+				B4FD5C6E1E652FC900EABD62 /* Dependencia.swift in Sources */,
+				B4FD5C791E652FF800EABD62 /* DirectorioTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
