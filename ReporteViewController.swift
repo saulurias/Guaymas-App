@@ -192,7 +192,6 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     //MARK: - Accion Enviar Reporte
-    
     @IBAction func enviarReporte(_ sender: Any) {
         if(validarTexto()){
             
@@ -205,21 +204,9 @@ class ReporteViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             reporteManager.enviarReporte(reporte: reporte);
             
-            
-            
-            /*
-            let alertController = UIAlertController(title: "Reporte Enviado", message: "Gracias por su colaboración", preferredStyle: UIAlertControllerStyle.alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                (result : UIAlertAction) -> Void in
-            }
-            alertController.addAction(okAction);
-            self.present(alertController, animated: true, completion: nil);
-             */
+            self.limpiarFormulario();
+
         }
-        
-        
-        
     }
     
     func cambiarPantalla(){

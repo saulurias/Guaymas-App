@@ -48,8 +48,6 @@ class ReporteManager{
             let responseString = String(data: data, encoding: .utf8);
             print("responseString\(responseString)");
             
-            
-            
             let json = JSON(data: data);
             self.folio = json["folio"].int!
             

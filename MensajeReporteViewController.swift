@@ -25,6 +25,7 @@ class MensajeReporteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let folio = folio {
             if let nombre = nombre {
+                print("NOMBRE DEL INTERESADO:\(nombre)");
                 saludoUsuarioLabel.text = "Hola \(nombre)";
                 mensajeLabel.text = "Su petición ha sido dada de alta en el sistema de recepción de reportes ciudadanos";
                 folioLabel.text = "\(folio)";

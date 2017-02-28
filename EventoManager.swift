@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 protocol EventoManagerDelegate {
     func eventosCargados();
 }
@@ -30,38 +32,43 @@ class EventoManager{
             
             let eventosJSON = json[].array!
             
-            for evento in eventosJSON {
-                let titulo = evento["nombre_evento"].string;
-                let descripcion = evento["desc"].string;
-                let organiza = evento["organiza"].string;
-                let lugar = evento["lugar"].string;
-                let fecha = evento["fecha"].string;
-                let hora = evento["hora"].string;
-                let contacto = evento["contacto"].string;
+            if(eventosJSON[0] != false){
+                for evento in eventosJSON {
+                    let titulo = evento["nombre_evento"].string;
+                    let descripcion = evento["desc"].string;
+                    let organiza = evento["organiza"].string;
+                    let lugar = evento["lugar"].string;
+                    let fecha = evento["fecha"].string;
+                    let hora = evento["hora"].string;
+                    let contacto = evento["contacto"].string;
+                    
+                    
+                    let imagen = evento["imagen"].string;
+                    var url = String();
+                    
+                    url = "http://eventos.guaymas.gob.mx/images/eventos/\(imagen!)";
+                    
+                    let evento = Evento(titulo: titulo!,
+                                        descripcion: descripcion!,
+                                        organiza: organiza!,
+                                        lugar: lugar!,
+                                        fecha: fecha!,
+                                        hora: hora!,
+                                        contacto: contacto!,
+                                        url: url);
+                    
+                    self.eventos.append(evento);
+                    
+                }//End for
                 
                 
-                let imagen = evento["imagen"].string;
-               
-                let url = "http://eventos.guaymas.gob.mx/images/eventos/\(imagen!)";
-                
-                let evento = Evento(titulo: titulo!,
-                                    descripcion: descripcion!,
-                                    organiza: organiza!,
-                                    lugar: lugar!,
-                                    fecha: fecha!,
-                                    hora: hora!,
-                                    contacto: contacto!,
-                                    url: url);
-                
-                self.eventos.append(evento);
-                
-            }//End for
-            
+            }
             if let delegate = self.delegate {
                 DispatchQueue.main.async {
                     delegate.eventosCargados();
                 }
             }
+            
         }//End Session
         session.resume();
     }//End cargarEventos()

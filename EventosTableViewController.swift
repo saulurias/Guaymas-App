@@ -21,8 +21,7 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     
     //MARK: - Evento Manager Delegate
     func eventosCargados() {
-        tableView.reloadData();
-        activityIndicator.stopAnimating();
+        verificarEventos();
     }
     
     func animacionCargando(){
@@ -43,6 +42,22 @@ class EventosTableViewController: UITableViewController, EventoManagerDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
+    }
+    
+    func verificarEventos (){
+        if(eventoManager.eventos.count == 0){
+            let alertController = UIAlertController(title: "No hay eventos proximos", message: "Puede buscar eventos anteriores", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                (result : UIAlertAction) -> Void in
+            }
+            alertController.addAction(okAction);
+            self.present(alertController, animated: true, completion: nil);
+            activityIndicator.stopAnimating();
+        }else{
+            tableView.reloadData();
+            activityIndicator.stopAnimating();
+        }
     }
     
     // MARK: - Table view data source

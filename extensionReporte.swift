@@ -89,4 +89,15 @@ extension ReporteViewController
         alertController.addAction(okAction);
         self.present(alertController, animated: true, completion: nil);
     }
+    
+    func limpiarFormulario(){
+        descripcionTextField.text = "";
+        interesadoTextField.text = "";
+        telefonoTextField.text = "";
+        direccionTextField.text = "";
+        direccionReporteTextField.text = "";
+        correoTextField.text = "";
+        pickedImaged.image = #imageLiteral(resourceName: "Fotodefault");
+        
+    }
 }
