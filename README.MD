@@ -6,10 +6,11 @@ Atención Ciudadana esta alerta a tus reportes, en los cuales puedes agregar ima
 
 
 
-Technologies Used
+Tecnologías Utilizadas
 --------------------
-Design and creation of an iOS application as professional Practices. (2016-2017)
-Among the technologies used for the development they stand:
+Diseño y creación de una aplicación para iOS en mis prácticas profesionales. (2016-2017)
+Dentro de las tecnologías utilizadas se encuentran:
+
 + Xcode
 + JSON
 + Manipulation of web services REST
