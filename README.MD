@@ -6,7 +6,7 @@ Atención Ciudadana esta alerta a tus reportes, en los cuales puedes agregar ima
 
 
 
-technologies Used
+Technologies Used
 --------------------
 Design and creation of an iOS application as professional Practices. (2016-2017)
 Among the technologies used for the development they stand:
