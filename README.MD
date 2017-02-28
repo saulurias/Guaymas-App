@@ -10,10 +10,10 @@ technologies Used
 --------------------
 Design and creation of an iOS application as professional Practices. (2016-2017)
 Among the technologies used for the development they stand:
-+Xcode
-+JSON
-+Manipulation of web services REST
-+Map Kit
-+Web View
-+Git & Github
++ Xcode
++ JSON
++ Manipulation of web services REST
++ Map Kit
++ Web View
++ Git & Github
 
